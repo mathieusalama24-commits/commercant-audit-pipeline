@@ -143,6 +143,13 @@ nav {
 .sec-dark .sec-sub { color: rgba(255,255,255,.5); }
 .sec-linen { background: var(--linen); }
 .sec-white { background: var(--white); }
+.sec-gold { background: var(--gold); }
+.colo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 2.5rem; }
+.colo-card { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.14); border-radius: 6px; padding: 1.5rem; }
+.colo-num { font-family: 'Fraunces', serif; font-size: 3.5rem; font-weight: 900; color: rgba(255,255,255,.14); line-height: 1; }
+.colo-card h4 { font-family: 'Fraunces', serif; font-size: 1.05rem; color: #fff; margin: .4rem 0 .5rem; }
+.colo-card p { font-size: .85rem; color: rgba(255,255,255,.62); line-height: 1.65; }
+.colo-price { display: block; margin-top: .75rem; font-size: .8rem; font-weight: 600; color: var(--nude); border-top: 1px solid rgba(255,255,255,.12); padding-top: .6rem; }
 
 /* PRESTATIONS */
 .presta-grid {
@@ -382,7 +389,7 @@ footer a { color: rgba(255,255,255,.3); text-decoration: none; }
       <div class="presta-body"><h3>Mèches & balayage</h3><p>Balayage californien, mèches fines, ombré hair — la spécialité du salon.</p><span class="presta-from">À partir de 70 €</span></div>
     </div>
     <div class="presta-card">
-      <div class="presta-photo-wrap"><img class="presta-photo" src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=600&q=80&auto=format&fit=crop" alt="Brushing"></div>
+      <div class="presta-photo-wrap"><img class="presta-photo" src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=600&q=80&auto=format&fit=crop" alt="Brushing"></div>
       <div class="presta-body"><h3>Brushing</h3><p>Lissage, ondulation, coiffage soirée ou mariage.</p><span class="presta-from">À partir de 30 €</span></div>
     </div>
     <div class="presta-card">
@@ -412,6 +419,32 @@ footer a { color: rgba(255,255,255,.3); text-decoration: none; }
     </div>
   </div>
 </div>
+
+<section class="sec sec-gold" id="coloriste">
+  <div class="sec-tag"><div class="sec-dash" style="background:rgba(255,255,255,.35)"></div><div class="sec-label" style="color:rgba(255,255,255,.6);letter-spacing:1.5px">Notre expertise</div></div>
+  <div class="sec-title" style="color:#fff;font-family:'Fraunces',serif">Coloriste<br>sur mesure</div>
+  <p class="sec-sub" style="color:rgba(255,255,255,.6)">Chaque couleur est créée pour votre carnation, votre couleur naturelle et vos envies — jamais standardisée, toujours sur-mesure.</p>
+  <div class="colo-grid">
+    <div class="colo-card">
+      <div class="colo-num">01</div>
+      <h4>Balayage & mèches</h4>
+      <p>Babylights, mèches fines, balayage californien — un effet naturel et lumineux adapté à votre couleur de base.</p>
+      <span class="colo-price">À partir de 70 €</span>
+    </div>
+    <div class="colo-card">
+      <div class="colo-num">02</div>
+      <h4>Coloration pleine</h4>
+      <p>Teinte personnalisée, couverture racines, couleur végétale sans ammoniaque — éclat garanti entre les visites.</p>
+      <span class="colo-price">À partir de 55 €</span>
+    </div>
+    <div class="colo-card">
+      <div class="colo-num">03</div>
+      <h4>Ombré & tie-and-dye</h4>
+      <p>Dégradé progressif deux tons ou plus — tendance, facile à entretenir, effet "sorti du salon" permanent.</p>
+      <span class="colo-price">À partir de 85 €</span>
+    </div>
+  </div>
+</section>
 
 <section class="sec sec-linen">
   <div class="sec-tag"><div class="sec-dash"></div><div class="sec-label">Réalisations</div></div>
