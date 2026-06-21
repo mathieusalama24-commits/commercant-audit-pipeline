@@ -147,30 +147,36 @@ nav {
 .presta-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1px; background: var(--warm);
-  border: 1px solid var(--warm); overflow: hidden;
+  gap: 1.6rem;
 }
-@media(max-width:700px){ .presta-grid{ grid-template-columns:1fr 1fr; } }
-.presta-item {
-  background: var(--white); padding: 2.2rem 1.8rem;
-  transition: background .3s;
-  position: relative; overflow: hidden;
+@media(max-width:900px){ .presta-grid{ grid-template-columns:1fr 1fr; } }
+@media(max-width:540px){ .presta-grid{ grid-template-columns:1fr; } }
+.presta-card {
+  background: var(--white);
+  overflow: hidden;
+  transition: transform .3s, box-shadow .3s;
 }
-.presta-item::after {
-  content: ''; position: absolute;
-  bottom: 0; left: 1.8rem; right: 1.8rem; height: 1px;
-  background: var(--gold); transform: scaleX(0);
+.presta-card:hover { transform: translateY(-5px); box-shadow: 0 16px 44px rgba(0,0,0,.11); }
+.presta-photo-wrap { overflow: hidden; }
+.presta-photo {
+  width: 100%; height: 220px;
+  object-fit: cover; display: block;
+  transition: transform .65s;
+}
+.presta-card:hover .presta-photo { transform: scale(1.06); }
+.presta-body { padding: 1.5rem 1.4rem 1.8rem; position: relative; }
+.presta-body::before {
+  content: ''; position: absolute; top: 0; left: 1.4rem; right: 1.4rem;
+  height: 1px; background: var(--gold); transform: scaleX(0);
   transform-origin: left; transition: transform .35s;
 }
-.presta-item:hover { background: var(--ivory); }
-.presta-item:hover::after { transform: scaleX(1); }
-.presta-icon { font-size: 1.6rem; margin-bottom: .9rem; display: block; }
-.presta-item h3 {
+.presta-card:hover .presta-body::before { transform: scaleX(1); }
+.presta-body h3 {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.15rem; font-weight: 700;
-  color: var(--noir); margin-bottom: .4rem;
+  font-size: 1.2rem; font-weight: 700;
+  color: var(--noir); margin-bottom: .5rem;
 }
-.presta-item p { font-size: .87rem; color: var(--muted); line-height: 1.6; }
+.presta-body p { font-size: .87rem; color: var(--muted); line-height: 1.65; }
 .presta-from {
   display: inline-block; margin-top: .9rem;
   font-size: .78rem; font-weight: 800;
@@ -265,8 +271,10 @@ nav {
 .info-line { display: flex; gap: .8rem; margin-bottom: 1.4rem; align-items: flex-start; }
 .info-ico {
   width: 38px; height: 38px; flex-shrink: 0;
-  background: var(--linen); border-radius: 4px;
-  display: flex; align-items: center; justify-content: center; font-size: 1rem;
+  background: var(--gold); border-radius: 2px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: .6rem; font-weight: 900; letter-spacing: .5px;
+  color: var(--noir); text-transform: uppercase;
 }
 .info-lbl { font-size: .72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); margin-bottom: .2rem; }
 .info-val { font-size: .95rem; color: var(--text); }
@@ -360,12 +368,30 @@ footer a { color: rgba(255,255,255,.3); text-decoration: none; }
   <div class="sec-title">Nos prestations</div>
   <p class="sec-sub">Chaque visite est pensée pour révéler le meilleur de votre chevelure — coupe, couleur, soin, coiffage.</p>
   <div class="presta-grid">
-    <div class="presta-item"><span class="presta-icon">✂️</span><h3>Coupe femme</h3><p>Courte, mi-longue, longue — taillée selon votre visage, votre style, votre mode de vie.</p><span class="presta-from">À partir de 38 €</span></div>
-    <div class="presta-item"><span class="presta-icon">🎨</span><h3>Coloration</h3><p>Teinte pleine, racines, couleur végétale. Un résultat lumineux qui dure.</p><span class="presta-from">À partir de 55 €</span></div>
-    <div class="presta-item"><span class="presta-icon">✨</span><h3>Mèches & balayage</h3><p>Balayage californien, mèches fines, ombré hair — la spécialité du salon.</p><span class="presta-from">À partir de 70 €</span></div>
-    <div class="presta-item"><span class="presta-icon">💇‍♀️</span><h3>Brushing</h3><p>Lissage, ondulation, coiffage soirée ou mariage.</p><span class="presta-from">À partir de 30 €</span></div>
-    <div class="presta-item"><span class="presta-icon">🌿</span><h3>Soins capillaires</h3><p>Masques nutrition, kératine, soins réparateurs pour cheveux abîmés.</p><span class="presta-from">À partir de 25 €</span></div>
-    <div class="presta-item"><span class="presta-icon">💼</span><h3>Forfaits</h3><p>Coupe + couleur, coupe + brushing — formules combinées avantageuses.</p><span class="presta-from">Sur devis</span></div>
+    <div class="presta-card">
+      <div class="presta-photo-wrap"><img class="presta-photo" src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80&auto=format&fit=crop" alt="Coupe femme"></div>
+      <div class="presta-body"><h3>Coupe femme</h3><p>Courte, mi-longue, longue — taillée selon votre visage, votre style, votre mode de vie.</p><span class="presta-from">À partir de 38 €</span></div>
+    </div>
+    <div class="presta-card">
+      <div class="presta-photo-wrap"><img class="presta-photo" src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=600&q=80&auto=format&fit=crop" alt="Coloration"></div>
+      <div class="presta-body"><h3>Coloration</h3><p>Teinte pleine, racines, couleur végétale. Un résultat lumineux qui dure.</p><span class="presta-from">À partir de 55 €</span></div>
+    </div>
+    <div class="presta-card">
+      <div class="presta-photo-wrap"><img class="presta-photo" src="https://images.unsplash.com/photo-1562322140-8baeececf3df?w=600&q=80&auto=format&fit=crop" alt="Mèches et balayage"></div>
+      <div class="presta-body"><h3>Mèches & balayage</h3><p>Balayage californien, mèches fines, ombré hair — la spécialité du salon.</p><span class="presta-from">À partir de 70 €</span></div>
+    </div>
+    <div class="presta-card">
+      <div class="presta-photo-wrap"><img class="presta-photo" src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=600&q=80&auto=format&fit=crop" alt="Brushing"></div>
+      <div class="presta-body"><h3>Brushing</h3><p>Lissage, ondulation, coiffage soirée ou mariage.</p><span class="presta-from">À partir de 30 €</span></div>
+    </div>
+    <div class="presta-card">
+      <div class="presta-photo-wrap"><img class="presta-photo" src="https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?w=600&q=80&auto=format&fit=crop" alt="Soins capillaires"></div>
+      <div class="presta-body"><h3>Soins capillaires</h3><p>Masques nutrition, kératine, soins réparateurs pour cheveux abîmés.</p><span class="presta-from">À partir de 25 €</span></div>
+    </div>
+    <div class="presta-card">
+      <div class="presta-photo-wrap"><img class="presta-photo" src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&q=80&auto=format&fit=crop" alt="Forfaits salon"></div>
+      <div class="presta-body"><h3>Forfaits</h3><p>Coupe + couleur, coupe + brushing — formules combinées avantageuses.</p><span class="presta-from">Sur devis</span></div>
+    </div>
   </div>
 </section>
 
@@ -391,9 +417,9 @@ footer a { color: rgba(255,255,255,.3); text-decoration: none; }
   <div class="sec-title">Avant / Après</div>
   <p class="sec-sub">Quelques créations récentes — colorations, coupes et soins réalisés au Salon 81.</p>
   <div class="galerie-grid">
-    <div class="gal-item"><img src="https://images.unsplash.com/photo-1492106087820-fe151450f3db?w=400&q=80&auto=format&fit=crop" alt="Coloration"></div>
-    <div class="gal-item"><img src="https://images.unsplash.com/photo-1519735777090-ec97162dc266?w=400&q=80&auto=format&fit=crop" alt="Balayage"></div>
-    <div class="gal-item"><img src="https://images.unsplash.com/photo-1530521954074-e64f6810b32d?w=400&q=80&auto=format&fit=crop" alt="Coupe"></div>
+    <div class="gal-item"><img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=400&q=80&auto=format&fit=crop" alt="Coloration"></div>
+    <div class="gal-item"><img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=400&q=80&auto=format&fit=crop" alt="Balayage"></div>
+    <div class="gal-item"><img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=400&q=80&auto=format&fit=crop" alt="Coupe"></div>
     <div class="gal-item"><img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?w=400&q=80&auto=format&fit=crop" alt="Coiffure"></div>
   </div>
 </section>
@@ -419,9 +445,9 @@ footer a { color: rgba(255,255,255,.3); text-decoration: none; }
     <div class="infos">
       <div class="sec-tag"><div class="sec-dash"></div><div class="sec-label">Infos pratiques</div></div>
       <div class="sec-title">Nous trouver</div>
-      <div class="info-line"><div class="info-ico">📍</div><div><div class="info-lbl">Adresse</div><div class="info-val">12 Boulevard Jean Allemane<br>95100 Argenteuil</div></div></div>
-      <div class="info-line"><div class="info-ico">📞</div><div><div class="info-lbl">Téléphone</div><div class="info-val"><a href="tel:0130255567">01 30 25 55 67</a></div></div></div>
-      <div class="info-line"><div class="info-ico">🕐</div><div><div class="info-lbl">Horaires</div><div class="info-val"><div class="hours">
+      <div class="info-line"><div class="info-ico">Adr</div><div><div class="info-lbl">Adresse</div><div class="info-val">12 Boulevard Jean Allemane<br>95100 Argenteuil</div></div></div>
+      <div class="info-line"><div class="info-ico">Tél</div><div><div class="info-lbl">Téléphone</div><div class="info-val"><a href="tel:0130255567">01 30 25 55 67</a></div></div></div>
+      <div class="info-line"><div class="info-ico">Hrs</div><div><div class="info-lbl">Horaires</div><div class="info-val"><div class="hours">
         <div class="h-row"><span class="day">Lundi</span><span class="closed">Fermé</span></div>
         <div class="h-row"><span class="day">Mardi – Vendredi</span><span class="time">9h30 – 18h00</span></div>
         <div class="h-row"><span class="day">Samedi</span><span class="time">9h30 – 19h00</span></div>
