@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Albert Sanitaire SARL — Plombier Argenteuil depuis 1991</title>
+<meta name="description" content="Albert Sanitaire, plombier à Argenteuil depuis 1991. Plomberie, salle de bain clé-en-main, carrelage. Installateur Atlantic agréé. Devis gratuit : 06 22 16 31 67.">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --slate:     #2C3E50;
+    --terra:     #E8734A;
+    --ivory:     #FAFAF8;
+    --linen:     #ECE9E4;
+    --text:      #2C2C2C;
+    --muted:     #6B6B6B;
+    --white:     #FFFFFF;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Source Sans Pro', 'Segoe UI', system-ui, sans-serif;
+    color: var(--text);
+    background: var(--ivory);
+    line-height: 1.65;
+  }
+
+  /* ── NAV ── */
+  nav {
+    background: var(--white);
+    border-bottom: 3px solid var(--terra);
+    padding: 0 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 68px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0,0,0,.06);
+  }
+  .nav-brand {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--slate);
+  }
+  .nav-brand span { color: var(--terra); }
+  .nav-right { display: flex; align-items: center; gap: 1.2rem; }
+  .nav-since {
+    font-size: .8rem;
+    color: var(--muted);
+    font-style: italic;
+  }
+  nav a.cta-nav {
+    background: var(--terra);
+    color: var(--white);
+    font-weight: 700;
+    font-size: .9rem;
+    padding: .5rem 1.3rem;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: opacity .2s;
+  }
+  nav a.cta-nav:hover { opacity: .87; }
+
+  /* ── HERO ── */
+  .hero {
+    background: linear-gradient(160deg, var(--slate) 55%, #1a2a3a 100%);
+    color: var(--white);
+    padding: 90px 5% 100px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -80px;
+    right: -40px;
+    width: 380px;
+    height: 380px;
+    border-radius: 50%;
+    background: rgba(232,115,74,.07);
+  }
+  .hero-inner { max-width: 660px; position: relative; z-index: 1; }
+  .hero-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+    margin-bottom: 1.4rem;
+    flex-wrap: wrap;
+  }
+  .badge {
+    display: inline-block;
+    padding: .28rem .8rem;
+    border-radius: 20px;
+    font-size: .78rem;
+    font-weight: 700;
+    letter-spacing: .8px;
+    text-transform: uppercase;
+  }
+  .badge-terra { background: var(--terra); color: var(--white); }
+  .badge-outline { border: 1px solid rgba(255,255,255,.35); color: rgba(255,255,255,.8); }
+  .hero h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 700;
+    line-height: 1.18;
+    margin-bottom: 1.1rem;
+  }
+  .hero h1 span { color: var(--terra); }
+  .hero p {
+    font-size: 1.1rem;
+    color: rgba(255,255,255,.78);
+    margin-bottom: 2.2rem;
+    max-width: 500px;
+  }
+  .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-terra {
+    background: var(--terra);
+    color: var(--white);
+    font-weight: 700;
+    font-size: 1.05rem;
+    padding: .9rem 2rem;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    box-shadow: 0 4px 16px rgba(232,115,74,.35);
+    transition: transform .15s, box-shadow .15s;
+  }
+  .btn-terra:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(232,115,74,.45); }
+  .btn-ghost {
+    border: 2px solid rgba(255,255,255,.35);
+    color: var(--white);
+    font-weight: 600;
+    font-size: 1rem;
+    padding: .9rem 1.8rem;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: border-color .2s;
+  }
+  .btn-ghost:hover { border-color: var(--terra); }
+
+  /* ── STATS STRIP ── */
+  .stats {
+    background: var(--terra);
+    color: var(--white);
+    padding: 1.6rem 5%;
+    display: flex;
+    gap: 3rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .stat { text-align: center; }
+  .stat-num {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1;
+  }
+  .stat-label { font-size: .82rem; opacity: .85; margin-top: .2rem; }
+
+  /* ── SECTION COMMONS ── */
+  section { padding: 76px 5%; }
+  .section-label {
+    font-size: .76rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--terra);
+    margin-bottom: .5rem;
+  }
+  .section-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+    font-weight: 700;
+    color: var(--slate);
+    margin-bottom: .8rem;
+  }
+  .section-sub { color: var(--muted); max-width: 540px; margin-bottom: 2.5rem; }
+
+  /* ── SERVICES ── */
+  .services-bg { background: var(--white); }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 1.5rem;
+  }
+  .service-card {
+    background: var(--ivory);
+    border-radius: 10px;
+    padding: 2rem 1.6rem;
+    border-top: 3px solid transparent;
+    transition: border-color .2s, transform .2s, box-shadow .2s;
+  }
+  .service-card:hover {
+    border-color: var(--terra);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0,0,0,.08);
+  }
+  .service-icon {
+    font-size: 2rem;
+    margin-bottom: .8rem;
+    display: block;
+  }
+  .service-card h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.1rem;
+    color: var(--slate);
+    margin-bottom: .5rem;
+  }
+  .service-card p { font-size: .9rem; color: var(--muted); }
+
+  /* ── GARANTIES ── */
+  .garanties-bg { background: var(--linen); }
+  .garanties-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 2rem;
+  }
+  .garantie {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+  .g-icon {
+    width: 48px; height: 48px;
+    background: var(--terra);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    color: white;
+    flex-shrink: 0;
+  }
+  .garantie h3 { font-weight: 700; color: var(--slate); margin-bottom: .3rem; font-size: 1rem; }
+  .garantie p { font-size: .88rem; color: var(--muted); }
+
+  /* ── RÉALISATIONS ── */
+  .reals-bg { background: var(--white); }
+  .reals-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.2rem;
+  }
+  .real-card {
+    background: var(--linen);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .real-img {
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.5rem;
+    background: var(--slate);
+    color: rgba(255,255,255,.2);
+  }
+  .real-info { padding: 1rem 1.2rem; }
+  .real-info h4 { font-weight: 700; color: var(--slate); font-size: .95rem; }
+  .real-info p { font-size: .83rem; color: var(--muted); margin-top: .2rem; }
+
+  /* ── CONTACT ── */
+  .contact-bg { background: var(--slate); color: var(--white); }
+  .contact-bg .section-title { color: var(--white); }
+  .contact-bg .section-sub { color: rgba(255,255,255,.65); }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+  @media (max-width: 700px) { .contact-grid { grid-template-columns: 1fr; } }
+  .contact-block { margin-bottom: 1.5rem; }
+  .contact-block .label { font-size: .78rem; text-transform: uppercase; letter-spacing: 1px; color: rgba(255,255,255,.5); margin-bottom: .3rem; }
+  .contact-block .value { font-size: 1rem; color: rgba(255,255,255,.9); }
+  .contact-block a { color: var(--terra); text-decoration: none; font-size: 1.25rem; font-weight: 700; }
+  .contact-block a:hover { text-decoration: underline; }
+  form { display: flex; flex-direction: column; gap: 1rem; }
+  form input, form select, form textarea {
+    padding: .75rem 1rem;
+    border: 1.5px solid rgba(255,255,255,.18);
+    border-radius: 6px;
+    font-size: .95rem;
+    font-family: inherit;
+    background: rgba(255,255,255,.07);
+    color: var(--white);
+    transition: border-color .2s;
+  }
+  form input::placeholder, form textarea::placeholder { color: rgba(255,255,255,.4); }
+  form select option { background: var(--slate); }
+  form input:focus, form select:focus, form textarea:focus {
+    outline: none;
+    border-color: var(--terra);
+  }
+  form textarea { resize: vertical; min-height: 110px; }
+  form button {
+    background: var(--terra);
+    color: var(--white);
+    font-weight: 700;
+    font-size: 1rem;
+    padding: .9rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: opacity .2s;
+  }
+  form button:hover { opacity: .88; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #1a2530;
+    color: rgba(255,255,255,.5);
+    text-align: center;
+    padding: 1.8rem 5%;
+    font-size: .85rem;
+  }
+  footer strong { color: var(--terra); }
+
+  @media (max-width: 600px) {
+    .hero-ctas { flex-direction: column; }
+    .stats { gap: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-brand">Albert Sanitaire<span>.</span></div>
+  <div class="nav-right">
+    <span class="nav-since">Plombier à Argenteuil depuis 1991</span>
+    <a class="cta-nav" href="tel:0622163167">📞 Devis gratuit</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">
+      <span class="badge badge-terra">Plombier Argenteuil (95100)</span>
+      <span class="badge badge-outline">✓ Installateur Atlantic agréé</span>
+    </div>
+    <h1><span>35 ans</span> d'expertise en plomberie et rénovation</h1>
+    <p>Fondée en 1991, Albert Sanitaire est votre artisan plombier de confiance à Argenteuil. Travail soigné, devis transparent, garantie sérénité.</p>
+    <div class="hero-ctas">
+      <a class="btn-terra" href="tel:0622163167">📞 06 22 16 31 67</a>
+      <a class="btn-ghost" href="#contact">Demander un devis</a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat">
+    <div class="stat-num">35+</div>
+    <div class="stat-label">Années d'expérience</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">∞</div>
+    <div class="stat-label">Chantiers réalisés</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">100%</div>
+    <div class="stat-label">Devis gratuit</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">95</div>
+    <div class="stat-label">Val-d'Oise</div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="services-bg" id="services">
+  <div class="section-label">Nos métiers</div>
+  <div class="section-title">Ce que nous réalisons</div>
+  <p class="section-sub">Plomberie, salle de bain complète, carrelage, chauffage — une seule entreprise, des savoir-faire multiples.</p>
+  <div class="services-grid">
+    <div class="service-card">
+      <span class="service-icon">🔧</span>
+      <h3>Plomberie</h3>
+      <p>Dépannage, fuites, canalisations, remplacement d'équipements sanitaires. Intervention rapide.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">🔥</span>
+      <h3>Chauffage</h3>
+      <p>Installation de chaudières et radiateurs. Installateur Atlantic agréé — SAV garanti.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">🛁</span>
+      <h3>Salle de bain clé-en-main</h3>
+      <p>De la conception à la pose : douche, baignoire, meuble vasque, robinetterie, faïence.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">🟦</span>
+      <h3>Carrelage</h3>
+      <p>Pose de carrelage sol et mur, salle de bain, cuisine, pièces de vie.</p>
+    </div>
+  </div>
+</section>
+
+<!-- GARANTIES -->
+<section class="garanties-bg">
+  <div class="section-label">Notre engagement</div>
+  <div class="section-title">Pourquoi choisir Albert Sanitaire ?</div>
+  <div class="garanties-grid">
+    <div class="garantie">
+      <div class="g-icon">🏅</div>
+      <div>
+        <h3>35 ans de savoir-faire</h3>
+        <p>Depuis 1991, des centaines de chantiers réalisés à Argenteuil et dans le Val-d'Oise. L'expérience, ça ne s'improvise pas.</p>
+      </div>
+    </div>
+    <div class="garantie">
+      <div class="g-icon">✅</div>
+      <div>
+        <h3>Installateur Atlantic agréé</h3>
+        <p>Certification constructeur : garantie pièces et main-d'œuvre, SAV prioritaire, interventions conformes.</p>
+      </div>
+    </div>
+    <div class="garantie">
+      <div class="g-icon">📋</div>
+      <div>
+        <h3>Devis gratuit &amp; détaillé</h3>
+        <p>Pas de mauvaises surprises : on chiffre tout avant de commencer, par écrit, sans engagement de votre côté.</p>
+      </div>
+    </div>
+    <div class="garantie">
+      <div class="g-icon">📍</div>
+      <div>
+        <h3>Artisan du quartier</h3>
+        <p>Basé à Argenteuil depuis toujours, on connaît les immeubles, les réseaux, les contraintes locales.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RÉALISATIONS -->
+<section class="reals-bg">
+  <div class="section-label">Réalisations</div>
+  <div class="section-title">Quelques chantiers récents</div>
+  <p class="section-sub">Photos avant/après de nos interventions à Argenteuil et alentours.</p>
+  <div class="reals-grid">
+    <div class="real-card">
+      <div class="real-img">🛁</div>
+      <div class="real-info">
+        <h4>Rénovation salle de bain complète</h4>
+        <p>Argenteuil · Douche à l'italienne + carrelage + meuble vasque</p>
+      </div>
+    </div>
+    <div class="real-card">
+      <div class="real-img">🔥</div>
+      <div class="real-info">
+        <h4>Remplacement chaudière Atlantic</h4>
+        <p>Houilles · Installation condensation + mise aux normes</p>
+      </div>
+    </div>
+    <div class="real-card">
+      <div class="real-img">🟦</div>
+      <div class="real-info">
+        <h4>Pose carrelage cuisine</h4>
+        <p>Argenteuil · 28 m² sol + crédence</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-bg" id="contact">
+  <div class="section-label">Nous contacter</div>
+  <div class="section-title">Obtenez votre devis gratuit</div>
+  <p class="section-sub">On se déplace pour évaluer votre projet et vous remettre un devis détaillé, sans engagement.</p>
+  <div class="contact-grid">
+    <div>
+      <div class="contact-block">
+        <div class="label">Téléphone</div>
+        <a href="tel:0622163167">06 22 16 31 67</a>
+      </div>
+      <div class="contact-block">
+        <div class="label">Adresse</div>
+        <div class="value">128 Rue Marcelle Laget, 95100 Argenteuil</div>
+      </div>
+      <div class="contact-block">
+        <div class="label">Zone d'intervention</div>
+        <div class="value">Argenteuil · Sartrouville · Houilles · Bezons · Colombes · et alentours</div>
+      </div>
+      <div class="contact-block">
+        <div class="label">Certification</div>
+        <div class="value">✓ Installateur Atlantic agréé · SIRET 381 127 588</div>
+      </div>
+    </div>
+    <form>
+      <input type="text" placeholder="Votre nom *" required>
+      <input type="tel" placeholder="Votre téléphone *" required>
+      <select>
+        <option value="">Type de travaux</option>
+        <option>Plomberie / dépannage</option>
+        <option>Salle de bain complète</option>
+        <option>Chauffage / chaudière</option>
+        <option>Carrelage</option>
+        <option>Autre</option>
+      </select>
+      <textarea placeholder="Décrivez votre projet (surface, type de logement, contraintes…)"></textarea>
+      <button type="submit">Envoyer ma demande →</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <strong>Albert Sanitaire SARL</strong> — Plombier à Argenteuil depuis 1991 · SIRET 381 127 588 · Installateur Atlantic agréé
+</footer>
+
+</body>
+</html>

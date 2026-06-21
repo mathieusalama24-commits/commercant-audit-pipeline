@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FPG — Plombier à Argenteuil | Intervention rapide 7j/7</title>
+<meta name="description" content="FPG, votre plombier à Argenteuil (95100). Dépannage urgence, plomberie, chauffage, salle de bain. Devis gratuit — appelez le 06 43 56 79 74.">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy:   #1A3A5C;
+    --amber:  #F4A623;
+    --white:  #FFFFFF;
+    --light:  #F2F2F2;
+    --text:   #333333;
+    --muted:  #666666;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Open Sans', system-ui, sans-serif;
+    color: var(--text);
+    background: var(--white);
+    line-height: 1.6;
+  }
+
+  /* ── NAV ── */
+  nav {
+    background: var(--navy);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 0 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+  }
+  .nav-brand {
+    font-family: 'Montserrat', system-ui, sans-serif;
+    font-weight: 800;
+    font-size: 1.3rem;
+    color: var(--white);
+    letter-spacing: .5px;
+  }
+  .nav-brand span { color: var(--amber); }
+  nav a.cta-nav {
+    background: var(--amber);
+    color: var(--navy);
+    font-weight: 700;
+    font-size: .9rem;
+    padding: .5rem 1.2rem;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: opacity .2s;
+  }
+  nav a.cta-nav:hover { opacity: .88; }
+
+  /* ── HERO ── */
+  .hero {
+    background: linear-gradient(135deg, var(--navy) 60%, #0e2540 100%);
+    color: var(--white);
+    padding: 80px 5% 90px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    right: -60px;
+    top: -60px;
+    width: 420px;
+    height: 420px;
+    border-radius: 50%;
+    background: rgba(244,166,35,.08);
+  }
+  .hero-inner { max-width: 680px; }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(244,166,35,.2);
+    color: var(--amber);
+    font-size: .8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: .3rem .8rem;
+    border-radius: 20px;
+    margin-bottom: 1.2rem;
+  }
+  .hero h1 {
+    font-family: 'Montserrat', system-ui, sans-serif;
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 1rem;
+  }
+  .hero h1 em { color: var(--amber); font-style: normal; }
+  .hero p {
+    font-size: 1.1rem;
+    color: rgba(255,255,255,.82);
+    margin-bottom: 2rem;
+    max-width: 520px;
+  }
+  .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--amber);
+    color: var(--navy);
+    font-weight: 800;
+    font-size: 1.05rem;
+    padding: .85rem 2rem;
+    border-radius: 6px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    transition: transform .15s, box-shadow .15s;
+    box-shadow: 0 4px 16px rgba(244,166,35,.35);
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(244,166,35,.4); }
+  .btn-secondary {
+    border: 2px solid rgba(255,255,255,.4);
+    color: var(--white);
+    font-weight: 600;
+    font-size: 1rem;
+    padding: .85rem 1.8rem;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: border-color .2s;
+  }
+  .btn-secondary:hover { border-color: var(--amber); }
+  .hero-trust {
+    margin-top: 2.5rem;
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  .trust-item {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    font-size: .9rem;
+    color: rgba(255,255,255,.75);
+  }
+  .trust-item .dot {
+    width: 8px; height: 8px;
+    background: var(--amber);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* ── SECTION COMMONS ── */
+  section { padding: 72px 5%; }
+  .section-label {
+    font-size: .78rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: .6rem;
+  }
+  .section-title {
+    font-family: 'Montserrat', system-ui, sans-serif;
+    font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+    font-weight: 800;
+    color: var(--navy);
+    margin-bottom: 1rem;
+  }
+  .section-sub {
+    color: var(--muted);
+    max-width: 520px;
+    margin-bottom: 2.5rem;
+  }
+
+  /* ── SERVICES ── */
+  .services-bg { background: var(--light); }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+  }
+  .service-card {
+    background: var(--white);
+    border-radius: 10px;
+    padding: 1.8rem 1.5rem;
+    box-shadow: 0 2px 12px rgba(0,0,0,.06);
+    transition: transform .2s, box-shadow .2s;
+  }
+  .service-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,.1); }
+  .service-icon {
+    width: 52px; height: 52px;
+    background: rgba(244,166,35,.12);
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+  }
+  .service-card h3 {
+    font-family: 'Montserrat', system-ui, sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: .4rem;
+  }
+  .service-card p { font-size: .9rem; color: var(--muted); }
+
+  /* ── ARGUMENTS ── */
+  .args-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+  }
+  .arg-item { display: flex; gap: 1rem; align-items: flex-start; }
+  .arg-num {
+    font-family: 'Montserrat', system-ui, sans-serif;
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--amber);
+    line-height: 1;
+    flex-shrink: 0;
+    width: 40px;
+  }
+  .arg-item h3 {
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: .3rem;
+  }
+  .arg-item p { font-size: .92rem; color: var(--muted); }
+
+  /* ── ZONE ── */
+  .zone-bg { background: var(--navy); color: var(--white); }
+  .zone-bg .section-title { color: var(--white); }
+  .zone-bg .section-sub { color: rgba(255,255,255,.7); }
+  .zone-tags { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 1rem; }
+  .zone-tag {
+    background: rgba(255,255,255,.12);
+    border: 1px solid rgba(255,255,255,.25);
+    color: var(--white);
+    padding: .4rem 1rem;
+    border-radius: 20px;
+    font-size: .88rem;
+  }
+  .zone-tag.main { background: var(--amber); border-color: var(--amber); color: var(--navy); font-weight: 700; }
+
+  /* ── AVIS ── */
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+  }
+  .review-card {
+    background: var(--white);
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 12px rgba(0,0,0,.06);
+    border-left: 3px solid var(--amber);
+  }
+  .stars { color: var(--amber); font-size: 1rem; margin-bottom: .6rem; }
+  .review-card p { font-size: .92rem; color: var(--text); margin-bottom: .8rem; font-style: italic; }
+  .review-author { font-size: .82rem; font-weight: 700; color: var(--muted); }
+
+  /* ── CONTACT ── */
+  .contact-bg { background: var(--light); }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+  @media (max-width: 700px) { .contact-grid { grid-template-columns: 1fr; } }
+  .contact-info h3 {
+    font-family: 'Montserrat', system-ui, sans-serif;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 1.2rem;
+  }
+  .contact-line {
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+    margin-bottom: 1rem;
+    font-size: .95rem;
+  }
+  .contact-icon { font-size: 1.2rem; width: 28px; }
+  .contact-link {
+    color: var(--navy);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+  }
+  .contact-link:hover { color: var(--amber); }
+  form { display: flex; flex-direction: column; gap: 1rem; }
+  form input, form select, form textarea {
+    padding: .75rem 1rem;
+    border: 1.5px solid #ddd;
+    border-radius: 6px;
+    font-size: .95rem;
+    font-family: inherit;
+    background: var(--white);
+    transition: border-color .2s;
+  }
+  form input:focus, form select:focus, form textarea:focus {
+    outline: none;
+    border-color: var(--amber);
+  }
+  form textarea { resize: vertical; min-height: 110px; }
+  form button {
+    background: var(--amber);
+    color: var(--navy);
+    font-weight: 800;
+    font-size: 1rem;
+    padding: .85rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: opacity .2s;
+  }
+  form button:hover { opacity: .88; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--navy);
+    color: rgba(255,255,255,.6);
+    text-align: center;
+    padding: 1.8rem 5%;
+    font-size: .85rem;
+  }
+  footer strong { color: var(--amber); }
+
+  /* ── URGENCE BANNER ── */
+  .urgence-bar {
+    background: var(--amber);
+    color: var(--navy);
+    text-align: center;
+    padding: .6rem 1rem;
+    font-weight: 700;
+    font-size: .9rem;
+  }
+  .urgence-bar a { color: var(--navy); text-decoration: none; font-size: 1rem; }
+
+  @media (max-width: 600px) {
+    .hero-ctas { flex-direction: column; }
+    .btn-primary, .btn-secondary { text-align: center; justify-content: center; }
+    .hero-trust { gap: 1rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="urgence-bar">
+  🔧 Urgence plomberie 24h/24 — <a href="tel:0643567974">06 43 56 79 74</a>
+</div>
+
+<nav>
+  <div class="nav-brand">FPG<span>.</span></div>
+  <a class="cta-nav" href="tel:0643567974">📞 Appeler maintenant</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">Plombier à Argenteuil (95100)</div>
+    <h1>Plomberie &amp; chauffage — <em>Intervention rapide</em> 7j/7</h1>
+    <p>Dépannage, installation, rénovation de salle de bain : FPG intervient vite, proprement, au juste prix.</p>
+    <div class="hero-ctas">
+      <a class="btn-primary" href="tel:0643567974">📞 06 43 56 79 74</a>
+      <a class="btn-secondary" href="#contact">Demander un devis gratuit</a>
+    </div>
+    <div class="hero-trust">
+      <div class="trust-item"><div class="dot"></div>Certifié gaz RGE</div>
+      <div class="trust-item"><div class="dot"></div>Devis gratuit &amp; sans engagement</div>
+      <div class="trust-item"><div class="dot"></div>Artisan local</div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services-bg" id="services">
+  <div class="section-label">Ce qu'on fait</div>
+  <div class="section-title">Nos interventions</div>
+  <p class="section-sub">Du dépannage en urgence à la rénovation complète, on couvre tous vos besoins en plomberie et chauffage.</p>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">🚨</div>
+      <h3>Urgences &amp; dépannage</h3>
+      <p>Fuite, canalisation bouchée, chauffe-eau en panne — intervention le jour même.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🔧</div>
+      <h3>Plomberie courante</h3>
+      <p>Remplacement de robinetterie, raccordements, installation d'équipements sanitaires.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🔥</div>
+      <h3>Chauffage</h3>
+      <p>Pose et entretien de chaudières, radiateurs, plancher chauffant. Certifié gaz.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">💨</div>
+      <h3>Ventilation (VMC)</h3>
+      <p>Installation et remplacement de VMC simple ou double flux.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🛁</div>
+      <h3>Salle de bain</h3>
+      <p>Rénovation complète ou partielle : douche à l'italienne, baignoire, meuble vasque.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">📋</div>
+      <h3>Devis &amp; conseil</h3>
+      <p>Diagnostic gratuit sur site — on vous explique ce qu'on va faire avant de commencer.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ARGUMENTS -->
+<section id="pourquoi">
+  <div class="section-label">Pourquoi nous choisir</div>
+  <div class="section-title">Ce qui nous différencie</div>
+  <div class="args-grid">
+    <div class="arg-item">
+      <div class="arg-num">01</div>
+      <div>
+        <h3>Certifié gaz</h3>
+        <p>Qualification PGN/PGP — on peut intervenir sur toutes les installations gaz en toute légalité et sécurité.</p>
+      </div>
+    </div>
+    <div class="arg-item">
+      <div class="arg-num">02</div>
+      <div>
+        <h3>Devis transparent</h3>
+        <p>Pas de surprise sur la facture : on vous donne un prix avant de commencer, déplacement inclus.</p>
+      </div>
+    </div>
+    <div class="arg-item">
+      <div class="arg-num">03</div>
+      <div>
+        <h3>Artisan local</h3>
+        <p>Basé à Argenteuil, on connaît les immeubles et quartiers du coin — moins de trajet, plus de réactivité.</p>
+      </div>
+    </div>
+    <div class="arg-item">
+      <div class="arg-num">04</div>
+      <div>
+        <h3>Multi-compétences</h3>
+        <p>Plomberie + chauffage + ventilation + salle de bain : un seul artisan pour l'ensemble de vos travaux.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ZONE -->
+<section class="zone-bg">
+  <div class="section-label">Où on intervient</div>
+  <div class="section-title">Zone d'intervention</div>
+  <p class="section-sub">On intervient principalement à Argenteuil et dans les communes voisines du Val-d'Oise et des Hauts-de-Seine.</p>
+  <div class="zone-tags">
+    <span class="zone-tag main">Argenteuil (95100)</span>
+    <span class="zone-tag">Sartrouville</span>
+    <span class="zone-tag">Houilles</span>
+    <span class="zone-tag">Bezons</span>
+    <span class="zone-tag">Colombes</span>
+    <span class="zone-tag">Gennevilliers</span>
+    <span class="zone-tag">Cergy</span>
+    <span class="zone-tag">Saint-Gratien</span>
+  </div>
+</section>
+
+<!-- AVIS -->
+<section id="avis">
+  <div class="section-label">Témoignages</div>
+  <div class="section-title">Ce que disent nos clients</div>
+  <div class="reviews-grid">
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p>"Fuite sous évier réparée en moins d'1h. Rapide, propre et honnête sur le prix. Je recommande sans hésiter."</p>
+      <div class="review-author">— Sophie M., Argenteuil</div>
+    </div>
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p>"Chauffe-eau tombé en panne un vendredi soir. Intervention le lendemain matin, remplacement nickel. Très professionnel."</p>
+      <div class="review-author">— Karim B., Houilles</div>
+    </div>
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p>"Devis clair, travail soigné pour la rénovation de notre salle de bain. On referait appel à FPG sans hésiter."</p>
+      <div class="review-author">— Isabelle R., Bezons</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-bg" id="contact">
+  <div class="section-label">Nous contacter</div>
+  <div class="section-title">Demandez un devis gratuit</div>
+  <div class="contact-grid">
+    <div class="contact-info">
+      <h3>Joignez-nous directement</h3>
+      <div class="contact-line">
+        <span class="contact-icon">📞</span>
+        <div>
+          <div style="font-size:.8rem;color:var(--muted);">Téléphone (urgences incluses)</div>
+          <a class="contact-link" href="tel:0643567974">06 43 56 79 74</a>
+        </div>
+      </div>
+      <div class="contact-line">
+        <span class="contact-icon">📍</span>
+        <div>
+          <div style="font-size:.8rem;color:var(--muted);">Adresse</div>
+          <span>63 Rue Ferdinand Berthoud, 95100 Argenteuil</span>
+        </div>
+      </div>
+      <div class="contact-line">
+        <span class="contact-icon">🕐</span>
+        <div>
+          <div style="font-size:.8rem;color:var(--muted);">Disponibilité</div>
+          <span>7j/7 — urgences 24h/24</span>
+        </div>
+      </div>
+    </div>
+    <form>
+      <input type="text" placeholder="Votre nom" required>
+      <input type="tel" placeholder="Votre téléphone" required>
+      <select>
+        <option value="">Type de prestation</option>
+        <option>Urgence / dépannage</option>
+        <option>Plomberie courante</option>
+        <option>Chauffage</option>
+        <option>Salle de bain</option>
+        <option>Autre</option>
+      </select>
+      <textarea placeholder="Décrivez votre problème ou votre projet…"></textarea>
+      <button type="submit">Envoyer ma demande →</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <strong>FPG</strong> — Plombier à Argenteuil (95100) · SIRET 808 665 103 · <a href="tel:0643567974" style="color:rgba(255,255,255,.6)">06 43 56 79 74</a>
+</footer>
+
+</body>
+</html>
