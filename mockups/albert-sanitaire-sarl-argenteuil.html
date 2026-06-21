@@ -7,23 +7,23 @@
 <meta name="description" content="Albert Sanitaire, votre plombier à Argenteuil depuis 35 ans. Plomberie, salle de bain, chauffage, carrelage. Installateur Atlantic agréé. Devis gratuit : 06 22 16 31 67.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
-  --slate:   #253545;
-  --slate2:  #1a2735;
-  --terra:   #C1633A;
-  --terra-lt:#D4845C;
-  --ivory:   #F9F7F4;
-  --linen:   #EDE8E1;
+  --slate:   #111111;
+  --slate2:  #1A1A1A;
+  --terra:   #E55B1A;
+  --terra-lt:#F07A42;
+  --ivory:   #F5F2EE;
+  --linen:   #ECE8E3;
   --warm:    #DDD5C8;
-  --text:    #1E1E1E;
+  --text:    #111111;
   --muted:   #6B6560;
   --white:   #FFFFFF;
 }
 html { scroll-behavior: smooth; }
-body { font-family: 'Source Sans 3', sans-serif; color: var(--text); background: var(--ivory); line-height: 1.65; }
+body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--ivory); line-height: 1.65; }
 
 /* NAV */
 nav {
@@ -37,11 +37,11 @@ nav {
 }
 .nav-logo {
   display: flex; align-items: baseline; gap: .4rem;
-  font-family: 'Playfair Display', serif;
+  font-family: 'Barlow Condensed', sans-serif;
   font-size: 1.25rem; font-weight: 700;
   color: var(--slate);
 }
-.nav-logo span { color: var(--terra); font-size: .85rem; font-weight: 400; font-style: italic; font-family: 'Source Sans 3', sans-serif; }
+.nav-logo span { color: var(--terra); font-size: .85rem; font-weight: 400; font-style: italic; font-family: 'Inter', sans-serif; }
 .nav-links { display: flex; align-items: center; gap: 2rem; }
 .nav-links a {
   font-size: .88rem; color: var(--muted); text-decoration: none;
@@ -74,18 +74,19 @@ nav {
 .hero-badge {
   display: inline-flex; align-items: center; gap: .6rem;
   background: rgba(193,99,58,.2); border: 1px solid rgba(193,99,58,.4);
-  color: #E8957A; font-size: .76rem; font-weight: 700;
+  color: var(--terra-lt); font-size: .76rem; font-weight: 700;
   letter-spacing: 1.5px; text-transform: uppercase;
   padding: .35rem 1rem; border-radius: 2px;
   margin-bottom: 1.8rem;
 }
 .hero h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(2.4rem, 5vw, 3.6rem);
-  font-weight: 800; color: var(--white); line-height: 1.12;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(3.2rem, 7vw, 5.2rem);
+  font-weight: 800; color: var(--white); line-height: 1.0;
+  text-transform: uppercase; letter-spacing: -1px;
   margin-bottom: 1.2rem;
 }
-.hero h1 em { font-style: italic; color: #E8957A; }
+.hero h1 em { font-style: normal; color: var(--terra); }
 .hero-sub {
   font-size: 1.1rem; color: rgba(255,255,255,.72);
   margin-bottom: 2.6rem; max-width: 500px; line-height: 1.7;
@@ -129,7 +130,7 @@ nav {
 }
 .stat:last-child { border-right: none; }
 .stat-n {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Barlow Condensed', sans-serif;
   font-size: 2.6rem; font-weight: 700;
   color: var(--terra-lt); line-height: 1;
 }
@@ -143,10 +144,11 @@ nav {
   color: var(--terra); margin-bottom: .6rem;
 }
 .sec-title {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
-  font-weight: 700; color: var(--slate);
-  line-height: 1.18; margin-bottom: 1rem;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800; color: var(--slate);
+  text-transform: uppercase; letter-spacing: -0.5px;
+  line-height: 1.1; margin-bottom: 1rem;
 }
 .sec-sub { color: var(--muted); max-width: 560px; font-size: 1.02rem; margin-bottom: 3rem; }
 .sec-white { background: var(--white); }
@@ -173,7 +175,7 @@ nav {
 .svc-card:hover { transform: translateY(-4px); box-shadow: 0 12px 36px rgba(0,0,0,.1); border-color: transparent; }
 .svc-card:hover::before { transform: scaleX(1); }
 .svc-num {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Barlow Condensed', sans-serif;
   font-size: 2.8rem; font-weight: 700;
   color: rgba(37,53,69,.08); line-height: 1;
   margin-bottom: .8rem;
@@ -198,10 +200,10 @@ nav {
   position: absolute; bottom: 1.5rem; left: 1.5rem;
   background: var(--terra); color: var(--white);
   padding: .8rem 1.2rem; border-radius: 6px;
-  font-family: 'Playfair Display', serif;
+  font-family: 'Barlow Condensed', sans-serif;
   font-size: 1rem; font-weight: 700; line-height: 1.2;
 }
-.about-img-badge span { display: block; font-family: 'Source Sans 3', sans-serif; font-size: .75rem; font-weight: 400; opacity: .85; }
+.about-img-badge span { display: block; font-family: 'Inter', sans-serif; font-size: .75rem; font-weight: 400; opacity: .85; }
 .about-text { }
 .about-text p { color: var(--muted); font-size: 1rem; line-height: 1.75; margin-bottom: 1.2rem; }
 .about-text p strong { color: var(--text); }
@@ -247,7 +249,7 @@ nav {
 }
 @media(max-width:860px){ .contact-grid{ grid-template-columns:1fr; gap:2.5rem; } }
 .contact-info h3 {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Barlow Condensed', sans-serif;
   font-size: 1.4rem; font-weight: 700;
   color: var(--slate); margin-bottom: 2rem;
 }
@@ -263,7 +265,7 @@ nav {
 .c-val a:hover { text-decoration: underline; }
 .contact-form { background: var(--white); padding: 2.5rem; border-radius: 10px; box-shadow: 0 4px 24px rgba(0,0,0,.07); }
 .contact-form h3 {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Barlow Condensed', sans-serif;
   font-size: 1.3rem; font-weight: 700;
   color: var(--slate); margin-bottom: 1.8rem;
 }
@@ -274,7 +276,7 @@ nav {
 .field input, .field select, .field textarea {
   padding: .8rem 1rem; border: 1.5px solid var(--warm);
   border-radius: 6px; font-size: .95rem;
-  font-family: 'Source Sans 3', sans-serif;
+  font-family: 'Inter', sans-serif;
   background: var(--ivory); color: var(--text);
   transition: border-color .2s, box-shadow .2s;
 }
@@ -285,7 +287,7 @@ nav {
 .field textarea { resize: vertical; min-height: 120px; }
 .submit-btn {
   width: 100%; background: var(--slate); color: var(--white);
-  font-family: 'Source Sans 3', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 700; font-size: 1rem;
   padding: 1rem; border: none; border-radius: 6px;
   cursor: pointer; margin-top: .5rem;

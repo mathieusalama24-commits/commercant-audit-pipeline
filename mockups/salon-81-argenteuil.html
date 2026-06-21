@@ -7,24 +7,25 @@
 <meta name="description" content="Salon 81, votre coiffeur et coloriste à Argenteuil (95100). Coupe femme, coloration, mèches, brushing. Réservation : 01 30 25 55 67.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
-  --noir:    #141414;
-  --noir2:   #1C1C1C;
-  --gold:    #B89355;
-  --gold-lt: #D4B47A;
-  --gold-bg: rgba(184,147,85,.08);
-  --ivory:   #FAF8F4;
-  --linen:   #F2EDE5;
+  --noir:    #0A0A0A;
+  --noir2:   #141414;
+  --gold:    #7A1F3D;
+  --gold-lt: #9E3A57;
+  --gold-bg: rgba(122,31,61,.08);
+  --nude:    #E8C4A2;
+  --ivory:   #FAFAF8;
+  --linen:   #F2ECE6;
   --warm:    #E5DDD1;
-  --text:    #1A1A1A;
+  --text:    #0A0A0A;
   --muted:   #7D7569;
   --white:   #FFFFFF;
 }
 html { scroll-behavior: smooth; }
-body { font-family: 'Nunito', sans-serif; color: var(--text); background: var(--ivory); line-height: 1.65; }
+body { font-family: 'DM Sans', sans-serif; color: var(--text); background: var(--ivory); line-height: 1.65; }
 
 /* NAV */
 nav {
@@ -35,7 +36,7 @@ nav {
   backdrop-filter: blur(16px);
 }
 .nav-logo {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Fraunces', serif;
   font-size: 1.4rem; font-weight: 600; font-style: italic;
   color: var(--white); letter-spacing: .5px;
 }
@@ -77,13 +78,13 @@ nav {
   color: var(--gold);
 }
 .hero h1 {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Fraunces', serif;
   font-size: clamp(2.8rem, 6vw, 4.4rem);
   font-weight: 700; font-style: italic;
   color: var(--white); line-height: 1.05;
   margin-bottom: 1.4rem;
 }
-.hero h1 strong { font-style: normal; display: block; font-size: .7em; font-weight: 400; color: var(--gold-lt); letter-spacing: 2px; text-transform: uppercase; font-family: 'Nunito', sans-serif; margin-bottom: .3rem; font-size: clamp(1.1rem, 2vw, 1.4rem); }
+.hero h1 strong { font-style: normal; display: block; font-size: .7em; font-weight: 400; color: var(--gold-lt); letter-spacing: 2px; text-transform: uppercase; font-family: 'DM Sans', sans-serif; margin-bottom: .3rem; font-size: clamp(1.1rem, 2vw, 1.4rem); }
 .hero-sub {
   font-size: 1.05rem; color: rgba(255,255,255,.65);
   margin-bottom: 2.8rem; max-width: 480px; line-height: 1.75;
@@ -130,7 +131,7 @@ nav {
   color: var(--gold);
 }
 .sec-title {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Fraunces', serif;
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 700; font-style: italic;
   color: var(--noir); line-height: 1.15;
@@ -172,7 +173,7 @@ nav {
 }
 .presta-card:hover .presta-body::before { transform: scaleX(1); }
 .presta-body h3 {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Fraunces', serif;
   font-size: 1.2rem; font-weight: 700;
   color: var(--noir); margin-bottom: .5rem;
 }
@@ -237,7 +238,7 @@ nav {
   margin-bottom: 3rem; flex-wrap: wrap;
 }
 .avis-score {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Fraunces', serif;
   font-size: 5rem; font-weight: 700; color: var(--white); line-height: 1;
 }
 .avis-meta { }
@@ -264,7 +265,7 @@ nav {
 }
 @media(max-width:860px){ .booking-grid{ grid-template-columns:1fr; gap:2.5rem; } }
 .infos h3 {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Fraunces', serif;
   font-size: 1.5rem; font-weight: 700;
   color: var(--noir); margin-bottom: 2rem;
 }
@@ -290,7 +291,7 @@ nav {
   border-radius: 4px;
 }
 .form-card h3 {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Fraunces', serif;
   font-size: 1.4rem; font-weight: 700; font-style: italic;
   color: var(--white); margin-bottom: 1.8rem;
 }
@@ -299,7 +300,7 @@ nav {
 .field input, .field select, .field textarea {
   padding: .8rem 1rem; border: 1px solid rgba(255,255,255,.12);
   background: rgba(255,255,255,.06); color: var(--white);
-  font-family: 'Nunito', sans-serif; font-size: .95rem;
+  font-family: 'DM Sans', sans-serif; font-size: .95rem;
   border-radius: 3px; transition: border-color .2s, box-shadow .2s;
 }
 .field input::placeholder { color: rgba(255,255,255,.3); }
@@ -311,7 +312,7 @@ nav {
 .field textarea { resize: vertical; min-height: 100px; }
 .resa-btn {
   width: 100%; background: var(--gold); color: var(--noir);
-  font-family: 'Nunito', sans-serif; font-weight: 800;
+  font-family: 'DM Sans', sans-serif; font-weight: 800;
   font-size: .95rem; padding: 1.05rem;
   border: none; cursor: pointer; margin-top: .5rem;
   letter-spacing: .3px; transition: background .2s, transform .2s;
