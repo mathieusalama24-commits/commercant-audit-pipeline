@@ -153,6 +153,15 @@ nav {
 .sec-sub { color: var(--muted); max-width: 560px; font-size: 1.02rem; margin-bottom: 3rem; }
 .sec-white { background: var(--white); }
 .sec-linen { background: var(--linen); }
+.sec-dark { background: var(--slate); }
+.sec-dark .sec-label { color: var(--terra); }
+.sec-dark .sec-title { color: #fff; }
+.sec-dark .sec-sub { color: rgba(255,255,255,.6); }
+.zone-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 1rem; margin-top: 2.5rem; }
+.zone-card { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1); border-radius: 6px; padding: 1.25rem 1rem; }
+.zone-num { font-family: 'Barlow Condensed', sans-serif; font-size: 2.8rem; font-weight: 800; color: var(--terra); line-height: 1; }
+.zone-dept-name { font-family: 'Barlow Condensed', sans-serif; font-size: 1rem; font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: .5px; margin: .25rem 0 .5rem; }
+.zone-cities { font-size: .75rem; color: rgba(255,255,255,.45); line-height: 1.7; }
 
 /* SERVICES */
 .services-grid {
@@ -386,9 +395,48 @@ footer a { color: var(--terra-lt); text-decoration: none; }
   <div class="sec-title">Quelques chantiers récents</div>
   <p class="sec-sub">Travaux réalisés à Argenteuil et dans toute l'Île-de-France.</p>
   <div class="real-grid">
-    <div class="real-card"><img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=600&q=80&auto=format&fit=crop" alt="Salle de bain rénovée"><div class="real-overlay"><p>Salle de bain complète — Argenteuil</p></div></div>
-    <div class="real-card"><img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&q=80&auto=format&fit=crop" alt="Installation chaudière"><div class="real-overlay"><p>Remplacement chaudière — Houilles</p></div></div>
-    <div class="real-card"><img src="https://images.unsplash.com/photo-1556909114-44e3e70034c2?w=600&q=80&auto=format&fit=crop" alt="Pose carrelage"><div class="real-overlay"><p>Carrelage cuisine — Argenteuil</p></div></div>
+    <div class="real-card"><img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&q=80&auto=format&fit=crop" alt="Salle de bain rénovée"><div class="real-overlay"><p>Salle de bain complète — Argenteuil</p></div></div>
+    <div class="real-card"><img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=600&q=80&auto=format&fit=crop" alt="Artisan en intervention"><div class="real-overlay"><p>Rénovation complète — Houilles</p></div></div>
+    <div class="real-card"><img src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=600&q=80&auto=format&fit=crop" alt="Réseau gaz et eau"><div class="real-overlay"><p>Réseau gaz & eau — Sannois</p></div></div>
+    <div class="real-card"><img src="https://images.unsplash.com/photo-1604709177225-055f99402ea3?w=600&q=80&auto=format&fit=crop" alt="Salle de bain réaménagée"><div class="real-overlay"><p>Salle de bain réaménagée — Cergy</p></div></div>
+  </div>
+</section>
+
+<section class="sec sec-dark" id="zone">
+  <div class="sec-label">Zone d'intervention</div>
+  <div class="sec-title">Île-de-France<br>entière</div>
+  <p class="sec-sub">Artisan basé à Argenteuil, Albert Sanitaire intervient sur l'ensemble de la région sans surcoût de déplacement — du Val-d'Oise jusqu'au Val-de-Marne.</p>
+  <div class="zone-grid">
+    <div class="zone-card">
+      <div class="zone-num">95</div>
+      <div class="zone-dept-name">Val-d'Oise</div>
+      <div class="zone-cities">Argenteuil · Sannois · Cormeilles-en-Parisis · Bezons · Cergy · Pontoise · Enghien-les-Bains · Ermont · Deuil-la-Barre · Saint-Gratien</div>
+    </div>
+    <div class="zone-card">
+      <div class="zone-num">92</div>
+      <div class="zone-dept-name">Hauts-de-Seine</div>
+      <div class="zone-cities">Nanterre · Colombes · Asnières-sur-Seine · Courbevoie · Rueil-Malmaison · Boulogne-Billancourt · Gennevilliers · Clichy</div>
+    </div>
+    <div class="zone-card">
+      <div class="zone-num">78</div>
+      <div class="zone-dept-name">Yvelines</div>
+      <div class="zone-cities">Conflans-Sainte-Honorine · Achères · Poissy · Saint-Germain-en-Laye · Versailles · Mantes-la-Jolie</div>
+    </div>
+    <div class="zone-card">
+      <div class="zone-num">75</div>
+      <div class="zone-dept-name">Paris</div>
+      <div class="zone-cities">Tous arrondissements · Particuliers & professionnels</div>
+    </div>
+    <div class="zone-card">
+      <div class="zone-num">93</div>
+      <div class="zone-dept-name">Seine-Saint-Denis</div>
+      <div class="zone-cities">Saint-Denis · Aubervilliers · Pantin · Saint-Ouen · Villetaneuse · Épinay-sur-Seine</div>
+    </div>
+    <div class="zone-card">
+      <div class="zone-num">94</div>
+      <div class="zone-dept-name">Val-de-Marne</div>
+      <div class="zone-cities">Vincennes · Créteil · Vitry-sur-Seine · Charenton-le-Pont</div>
+    </div>
   </div>
 </section>
 
