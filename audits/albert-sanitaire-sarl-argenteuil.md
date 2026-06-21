@@ -4,7 +4,8 @@
 **Téléphone :** 06 22 16 31 67  
 **URL site :** sarlalbertsanitaire.site-solocal.com → **404 (site mort)**  
 **Statut site :** FAIBLE — site Solocal non fonctionnel  
-**Sources identifiées :** PagesJaunes, Guide-Artisan, MeilleurArtisan, Atlantic (installateur agréé)  
+**Email :** albert.sanitaire@free.fr  
+**Sources identifiées :** PagesJaunes, Guide-Artisan, MeilleurArtisan, Atlantic (installateur agréé), Espace Aubade (partenaire)  
 **Dirigeant :** Alain MANIER  
 **Fondée :** 1991 (entreprise établie de longue date)  
 
@@ -41,9 +42,11 @@
 - Collecter et afficher des avis clients
 
 ### Points forts à conserver
-- Ancienneté : 35 ans d'activité = signal de fiabilité fort
+- Ancienneté : 35 ans d'activité (depuis 1991) = signal de fiabilité fort
 - Label Atlantic (installateur agréé) = argument différenciateur concret
-- Services larges : plomberie + carrelage + installation = valeur client plus élevée
+- **Partenaire Espace Aubade** : accès aux gammes premium (showrooms Cormeilles-en-Parisis + Sannois) — montée en gamme possible
+- Services larges : plomberie + carrelage (céramique ET terre cuite) + chauffage + urgences = valeur client élevée
+- **Zone Île-de-France** : intervention confirmée au-delà d'Argenteuil — communes limitrophes et IDF
 
 ---
 
@@ -65,11 +68,11 @@
 
 ### Structure de page proposée
 1. **Hero** — *"35 ans de plomberie à Argenteuil"* + CTA `Devis gratuit` + numéro de téléphone cliquable
-2. **Nos services** — 4 blocs : Plomberie · Chauffage · Salle de bain clé-en-main · Carrelage
-3. **Notre engagement** — Installateur Atlantic agréé · Artisan local · Devis sans surprise
-4. **Réalisations** — Galerie photo (avant/après si possible)
-5. **Zone d'intervention** — Argenteuil et communes limitrophes (Val-d'Oise)
-6. **Contact** — Formulaire + téléphone + adresse avec carte
+2. **Nos services** — 4 blocs : Plomberie & urgences · Salle de bain (Aubade) · Chauffage (Atlantic) · Carrelage
+3. **Notre engagement** — Atlantic agréé · Partenaire Aubade · Devis sans surprise · Artisan local
+4. **Réalisations** — Galerie photo chantiers réels (avant/après)
+5. **Zone d'intervention** — Argenteuil et toute l'Île-de-France
+6. **Contact** — Téléphone + email (albert.sanitaire@free.fr) + formulaire + adresse
 
 ### Pitch client
 > "Votre réputation de 35 ans mérite mieux qu'une page d'erreur — remplaçons ce site mort par une vitrine qui convertit les visites en appels."
