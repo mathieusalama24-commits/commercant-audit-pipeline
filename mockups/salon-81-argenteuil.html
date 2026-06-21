@@ -3,555 +3,457 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Salon 81 — Coiffeur &amp; Coloriste à Argenteuil</title>
-<meta name="description" content="Salon 81, votre coiffeur et coloriste à Argenteuil (95100). Coupe, coloration, mèches, brushing. Réservation en ligne. 01 30 25 55 67.">
+<title>Salon 81 — Coiffeur & Coloriste à Argenteuil</title>
+<meta name="description" content="Salon 81, votre coiffeur et coloriste à Argenteuil (95100). Coupe femme, coloration, mèches, brushing. Réservation : 01 30 25 55 67.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --noir:    #141414;
+  --noir2:   #1C1C1C;
+  --gold:    #B89355;
+  --gold-lt: #D4B47A;
+  --gold-bg: rgba(184,147,85,.08);
+  --ivory:   #FAF8F4;
+  --linen:   #F2EDE5;
+  --warm:    #E5DDD1;
+  --text:    #1A1A1A;
+  --muted:   #7D7569;
+  --white:   #FFFFFF;
+}
+html { scroll-behavior: smooth; }
+body { font-family: 'Nunito', sans-serif; color: var(--text); background: var(--ivory); line-height: 1.65; }
 
-  :root {
-    --black:    #1C1C1E;
-    --gold:     #C9A96E;
-    --gold-lt:  #E8D5B0;
-    --ivory:    #FAF8F5;
-    --linen:    #F0EDE8;
-    --text:     #2A2A2A;
-    --muted:    #7A7067;
-    --white:    #FFFFFF;
-  }
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  height: 74px; padding: 0 6%;
+  display: flex; align-items: center; justify-content: space-between;
+  background: rgba(20,20,20,.97);
+  backdrop-filter: blur(16px);
+}
+.nav-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem; font-weight: 600; font-style: italic;
+  color: var(--white); letter-spacing: .5px;
+}
+.nav-logo strong { font-style: normal; color: var(--gold); }
+.nav-links { display: flex; align-items: center; gap: 2.2rem; }
+.nav-links a {
+  font-size: .82rem; font-weight: 600; letter-spacing: .5px;
+  color: rgba(255,255,255,.55); text-decoration: none;
+  text-transform: uppercase; transition: color .2s;
+}
+.nav-links a:hover { color: var(--gold); }
+.nav-resa {
+  background: transparent; border: 1px solid var(--gold);
+  color: var(--gold) !important;
+  padding: .5rem 1.4rem; border-radius: 2px;
+}
+.nav-resa:hover { background: var(--gold) !important; color: var(--noir) !important; }
+@media(max-width:720px){ .nav-links a:not(.nav-resa){ display:none; } }
 
-  html { scroll-behavior: smooth; }
+/* HERO */
+.hero {
+  min-height: 100vh;
+  background-image:
+    linear-gradient(135deg, rgba(20,20,20,.9) 40%, rgba(20,20,20,.5) 100%),
+    url('https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1600&q=85&auto=format&fit=crop');
+  background-size: cover; background-position: center 30%;
+  display: flex; align-items: center;
+  padding: 150px 6% 100px;
+}
+.hero-inner { max-width: 640px; }
+.hero-line {
+  display: flex; align-items: center; gap: 1rem;
+  margin-bottom: 2rem;
+}
+.hero-dash { width: 40px; height: 1px; background: var(--gold); }
+.hero-tag {
+  font-size: .72rem; font-weight: 800;
+  letter-spacing: 3px; text-transform: uppercase;
+  color: var(--gold);
+}
+.hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.8rem, 6vw, 4.4rem);
+  font-weight: 700; font-style: italic;
+  color: var(--white); line-height: 1.05;
+  margin-bottom: 1.4rem;
+}
+.hero h1 strong { font-style: normal; display: block; font-size: .7em; font-weight: 400; color: var(--gold-lt); letter-spacing: 2px; text-transform: uppercase; font-family: 'Nunito', sans-serif; margin-bottom: .3rem; font-size: clamp(1.1rem, 2vw, 1.4rem); }
+.hero-sub {
+  font-size: 1.05rem; color: rgba(255,255,255,.65);
+  margin-bottom: 2.8rem; max-width: 480px; line-height: 1.75;
+}
+.hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+.btn-gold {
+  background: var(--gold); color: var(--noir);
+  font-weight: 800; font-size: .95rem;
+  padding: 1.05rem 2.4rem; text-decoration: none;
+  display: inline-flex; align-items: center; gap: .5rem;
+  letter-spacing: .3px;
+  box-shadow: 0 6px 28px rgba(184,147,85,.35);
+  transition: transform .2s, box-shadow .2s, background .2s;
+}
+.btn-gold:hover { transform: translateY(-2px); box-shadow: 0 10px 36px rgba(184,147,85,.45); background: var(--gold-lt); }
+.btn-ghost {
+  border: 1px solid rgba(255,255,255,.35); color: var(--white);
+  font-weight: 600; font-size: .95rem;
+  padding: 1.05rem 2.2rem; text-decoration: none;
+  transition: border-color .2s, background .2s;
+}
+.btn-ghost:hover { border-color: var(--gold); background: rgba(184,147,85,.07); }
 
-  body {
-    font-family: 'Nunito', 'Segoe UI', system-ui, sans-serif;
-    color: var(--text);
-    background: var(--ivory);
-    line-height: 1.65;
-  }
+/* SCROLL INDICATOR */
+.scroll-hint {
+  margin-top: 3.5rem;
+  display: flex; align-items: center; gap: .8rem;
+  font-size: .75rem; font-weight: 600;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  color: rgba(255,255,255,.35);
+}
+.scroll-line { width: 1px; height: 40px; background: rgba(255,255,255,.2); }
 
-  /* ── NAV ── */
-  nav {
-    background: var(--black);
-    padding: 0 5%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 68px;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-  }
-  .nav-brand {
-    font-family: 'Cormorant Garamond', Georgia, serif;
-    font-size: 1.5rem;
-    font-weight: 700;
-    font-style: italic;
-    color: var(--white);
-    letter-spacing: .5px;
-  }
-  .nav-brand span { color: var(--gold); }
-  .nav-links { display: flex; align-items: center; gap: 1.8rem; }
-  .nav-links a {
-    color: rgba(255,255,255,.7);
-    text-decoration: none;
-    font-size: .88rem;
-    letter-spacing: .3px;
-    transition: color .2s;
-  }
-  .nav-links a:hover { color: var(--gold); }
-  .nav-links a.cta {
-    background: var(--gold);
-    color: var(--black);
-    font-weight: 700;
-    padding: .45rem 1.2rem;
-    border-radius: 4px;
-    transition: opacity .2s;
-  }
-  .nav-links a.cta:hover { opacity: .88; color: var(--black); }
-  @media (max-width: 640px) {
-    .nav-links a:not(.cta) { display: none; }
-  }
+/* SEC COMMONS */
+.sec { padding: 100px 6%; }
+.sec-tag {
+  display: flex; align-items: center; gap: 1rem;
+  margin-bottom: .7rem;
+}
+.sec-dash { width: 30px; height: 1px; background: var(--gold); }
+.sec-label {
+  font-size: .7rem; font-weight: 800;
+  letter-spacing: 3px; text-transform: uppercase;
+  color: var(--gold);
+}
+.sec-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700; font-style: italic;
+  color: var(--noir); line-height: 1.15;
+  margin-bottom: 1rem;
+}
+.sec-sub { color: var(--muted); font-size: 1rem; max-width: 540px; margin-bottom: 3.5rem; line-height: 1.75; }
+.sec-dark { background: var(--noir); }
+.sec-dark .sec-title { color: var(--white); }
+.sec-dark .sec-sub { color: rgba(255,255,255,.5); }
+.sec-linen { background: var(--linen); }
+.sec-white { background: var(--white); }
 
-  /* ── HERO ── */
-  .hero {
-    background: var(--black);
-    color: var(--white);
-    padding: 100px 5% 110px;
-    position: relative;
-    overflow: hidden;
-  }
-  .hero::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: radial-gradient(ellipse at 70% 40%, rgba(201,169,110,.12) 0%, transparent 65%);
-    pointer-events: none;
-  }
-  .hero-inner { max-width: 640px; position: relative; z-index: 1; }
-  .hero-tag {
-    display: inline-flex;
-    align-items: center;
-    gap: .5rem;
-    font-size: .78rem;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 1.4rem;
-  }
-  .hero-tag::before {
-    content: '';
-    display: block;
-    width: 28px; height: 1px;
-    background: var(--gold);
-  }
-  .hero h1 {
-    font-family: 'Cormorant Garamond', Georgia, serif;
-    font-size: clamp(2.2rem, 5.5vw, 3.4rem);
-    font-weight: 700;
-    font-style: italic;
-    line-height: 1.12;
-    margin-bottom: 1rem;
-  }
-  .hero h1 strong { font-style: normal; color: var(--gold); }
-  .hero p {
-    font-size: 1.05rem;
-    color: rgba(255,255,255,.72);
-    margin-bottom: 2.4rem;
-    max-width: 480px;
-  }
-  .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
-  .btn-gold {
-    background: var(--gold);
-    color: var(--black);
-    font-weight: 800;
-    font-size: 1rem;
-    padding: .9rem 2rem;
-    border-radius: 4px;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: .5rem;
-    box-shadow: 0 4px 18px rgba(201,169,110,.3);
-    transition: transform .15s, box-shadow .15s;
-  }
-  .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(201,169,110,.42); }
-  .btn-outline {
-    border: 1.5px solid rgba(255,255,255,.3);
-    color: var(--white);
-    font-weight: 600;
-    font-size: 1rem;
-    padding: .9rem 1.8rem;
-    border-radius: 4px;
-    text-decoration: none;
-    transition: border-color .2s;
-  }
-  .btn-outline:hover { border-color: var(--gold); }
+/* PRESTATIONS */
+.presta-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px; background: var(--warm);
+  border: 1px solid var(--warm); overflow: hidden;
+}
+@media(max-width:700px){ .presta-grid{ grid-template-columns:1fr 1fr; } }
+.presta-item {
+  background: var(--white); padding: 2.2rem 1.8rem;
+  transition: background .3s;
+  position: relative; overflow: hidden;
+}
+.presta-item::after {
+  content: ''; position: absolute;
+  bottom: 0; left: 1.8rem; right: 1.8rem; height: 1px;
+  background: var(--gold); transform: scaleX(0);
+  transform-origin: left; transition: transform .35s;
+}
+.presta-item:hover { background: var(--ivory); }
+.presta-item:hover::after { transform: scaleX(1); }
+.presta-icon { font-size: 1.6rem; margin-bottom: .9rem; display: block; }
+.presta-item h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15rem; font-weight: 700;
+  color: var(--noir); margin-bottom: .4rem;
+}
+.presta-item p { font-size: .87rem; color: var(--muted); line-height: 1.6; }
+.presta-from {
+  display: inline-block; margin-top: .9rem;
+  font-size: .78rem; font-weight: 800;
+  color: var(--gold); letter-spacing: .5px;
+}
 
-  /* ── SECTION COMMONS ── */
-  section { padding: 80px 5%; }
-  .section-label {
-    font-size: .75rem;
-    font-weight: 700;
-    letter-spacing: 2.5px;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: .5rem;
-  }
-  .section-title {
-    font-family: 'Cormorant Garamond', Georgia, serif;
-    font-size: clamp(1.8rem, 4vw, 2.5rem);
-    font-weight: 700;
-    font-style: italic;
-    color: var(--black);
-    margin-bottom: .8rem;
-    line-height: 1.2;
-  }
-  .section-sub { color: var(--muted); max-width: 500px; margin-bottom: 2.8rem; }
+/* PHOTO EDITORIAL */
+.editorial {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 0; min-height: 560px;
+}
+@media(max-width:860px){ .editorial{ grid-template-columns:1fr; } }
+.editorial-img { overflow: hidden; }
+.editorial-img img {
+  width: 100%; height: 100%; min-height: 400px;
+  object-fit: cover; display: block;
+  transition: transform .8s;
+}
+.editorial:hover .editorial-img img { transform: scale(1.03); }
+.editorial-text {
+  background: var(--noir2);
+  display: flex; flex-direction: column;
+  justify-content: center; padding: 5rem 4rem;
+}
+@media(max-width:860px){ .editorial-text{ padding:3.5rem 6%; } }
+.editorial-text p {
+  color: rgba(255,255,255,.65);
+  font-size: 1rem; line-height: 1.8;
+  margin-bottom: 1.2rem;
+}
+.editorial-text strong { color: var(--white); }
+.editorial-atouts { margin-top: 2rem; display: flex; flex-direction: column; gap: .8rem; }
+.atout {
+  display: flex; align-items: center; gap: .8rem;
+  font-size: .9rem; color: rgba(255,255,255,.7);
+}
+.atout-bar { width: 20px; height: 1px; background: var(--gold); flex-shrink: 0; }
 
-  /* ── PRESTATIONS ── */
-  .prestations-bg { background: var(--white); }
-  .presta-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.2rem;
-  }
-  .presta-card {
-    padding: 2rem 1.5rem;
-    border-radius: 8px;
-    background: var(--ivory);
-    border-bottom: 2px solid transparent;
-    transition: border-color .2s, transform .2s, box-shadow .2s;
-    text-align: center;
-  }
-  .presta-card:hover {
-    border-bottom-color: var(--gold);
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(0,0,0,.07);
-  }
-  .presta-emoji { font-size: 2.2rem; margin-bottom: .8rem; display: block; }
-  .presta-card h3 {
-    font-family: 'Cormorant Garamond', Georgia, serif;
-    font-size: 1.15rem;
-    font-weight: 700;
-    color: var(--black);
-    margin-bottom: .3rem;
-  }
-  .presta-card p { font-size: .85rem; color: var(--muted); }
-  .presta-from {
-    display: inline-block;
-    margin-top: .6rem;
-    font-size: .8rem;
-    font-weight: 700;
-    color: var(--gold);
-  }
+/* GALERIE */
+.galerie-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: .6rem;
+}
+@media(max-width:700px){ .galerie-grid{ grid-template-columns:repeat(2,1fr); } }
+.gal-item { overflow: hidden; border-radius: 2px; cursor: pointer; }
+.gal-item img {
+  width: 100%; height: 280px; object-fit: cover;
+  display: block; transition: transform .6s;
+  filter: saturate(.9);
+}
+.gal-item:hover img { transform: scale(1.08); filter: saturate(1.1); }
 
-  /* ── SALON ── */
-  .salon-bg { background: var(--linen); }
-  .salon-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
-  }
-  @media (max-width: 700px) { .salon-grid { grid-template-columns: 1fr; gap: 2rem; } }
-  .salon-text p { color: var(--muted); margin-bottom: 1.2rem; }
-  .salon-text strong { color: var(--black); }
-  .salon-photos {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: .8rem;
-  }
-  .photo-block {
-    background: var(--black);
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2.5rem;
-    color: rgba(255,255,255,.15);
-  }
-  .photo-block:first-child { grid-row: span 2; height: 260px; font-size: 3.5rem; }
-  .photo-block:not(:first-child) { height: 120px; }
+/* AVIS */
+.avis-header {
+  display: flex; align-items: baseline; gap: 1.5rem;
+  margin-bottom: 3rem; flex-wrap: wrap;
+}
+.avis-score {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 5rem; font-weight: 700; color: var(--white); line-height: 1;
+}
+.avis-meta { }
+.avis-stars { color: var(--gold); font-size: 1.2rem; letter-spacing: 3px; }
+.avis-count { font-size: .82rem; color: rgba(255,255,255,.4); margin-top: .3rem; }
+.avis-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.2rem;
+}
+.avis-card {
+  background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.08);
+  border-radius: 4px; padding: 1.8rem;
+  transition: background .2s, border-color .2s;
+}
+.avis-card:hover { background: rgba(255,255,255,.08); border-color: rgba(184,147,85,.3); }
+.avis-stars-sm { color: var(--gold); font-size: .85rem; margin-bottom: .8rem; }
+.avis-card p { font-size: .9rem; color: rgba(255,255,255,.7); font-style: italic; line-height: 1.7; margin-bottom: 1rem; }
+.avis-name { font-size: .78rem; font-weight: 700; color: rgba(255,255,255,.35); letter-spacing: .5px; }
 
-  /* ── GALERIE ── */
-  .galerie-bg { background: var(--black); }
-  .galerie-bg .section-title { color: var(--gold-lt); }
-  .galerie-bg .section-sub { color: rgba(255,255,255,.55); }
-  .galerie-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    gap: .8rem;
-  }
-  .galerie-item {
-    background: #2a2a2a;
-    border-radius: 8px;
-    height: 200px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: .5rem;
-    font-size: 2.5rem;
-    color: rgba(255,255,255,.15);
-    overflow: hidden;
-    position: relative;
-  }
-  .galerie-item .label {
-    position: absolute;
-    bottom: 0; left: 0; right: 0;
-    background: linear-gradient(to top, rgba(0,0,0,.7), transparent);
-    padding: .8rem .8rem .5rem;
-    font-size: .75rem;
-    color: var(--gold-lt);
-    font-weight: 600;
-    letter-spacing: .5px;
-  }
+/* BOOKING */
+.booking-grid {
+  display: grid; grid-template-columns: 1fr 1.1fr;
+  gap: 5rem; align-items: start;
+}
+@media(max-width:860px){ .booking-grid{ grid-template-columns:1fr; gap:2.5rem; } }
+.infos h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem; font-weight: 700;
+  color: var(--noir); margin-bottom: 2rem;
+}
+.info-line { display: flex; gap: .8rem; margin-bottom: 1.4rem; align-items: flex-start; }
+.info-ico {
+  width: 38px; height: 38px; flex-shrink: 0;
+  background: var(--linen); border-radius: 4px;
+  display: flex; align-items: center; justify-content: center; font-size: 1rem;
+}
+.info-lbl { font-size: .72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); margin-bottom: .2rem; }
+.info-val { font-size: .95rem; color: var(--text); }
+.info-val a { color: var(--noir); font-weight: 700; font-size: 1.1rem; text-decoration: none; }
+.info-val a:hover { color: var(--gold); }
+.hours { margin-top: .3rem; display: flex; flex-direction: column; gap: .25rem; }
+.h-row { display: flex; justify-content: space-between; font-size: .88rem; padding: .25rem 0; border-bottom: 1px solid var(--warm); }
+.h-row .day { color: var(--muted); }
+.h-row .time { font-weight: 700; color: var(--text); }
+.h-row .closed { color: var(--warm); font-style: italic; }
+.form-card {
+  background: var(--noir); padding: 2.8rem 2.5rem;
+  border-radius: 4px;
+}
+.form-card h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem; font-weight: 700; font-style: italic;
+  color: var(--white); margin-bottom: 1.8rem;
+}
+.field { display: flex; flex-direction: column; gap: .4rem; margin-bottom: 1rem; }
+.field label { font-size: .72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; color: rgba(255,255,255,.4); }
+.field input, .field select, .field textarea {
+  padding: .8rem 1rem; border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.06); color: var(--white);
+  font-family: 'Nunito', sans-serif; font-size: .95rem;
+  border-radius: 3px; transition: border-color .2s, box-shadow .2s;
+}
+.field input::placeholder { color: rgba(255,255,255,.3); }
+.field select option { background: var(--noir2); }
+.field input:focus, .field select:focus, .field textarea:focus {
+  outline: none; border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(184,147,85,.1);
+}
+.field textarea { resize: vertical; min-height: 100px; }
+.resa-btn {
+  width: 100%; background: var(--gold); color: var(--noir);
+  font-family: 'Nunito', sans-serif; font-weight: 800;
+  font-size: .95rem; padding: 1.05rem;
+  border: none; cursor: pointer; margin-top: .5rem;
+  letter-spacing: .3px; transition: background .2s, transform .2s;
+}
+.resa-btn:hover { background: var(--gold-lt); transform: translateY(-1px); }
 
-  /* ── AVIS ── */
-  .avis-bg { background: var(--ivory); }
-  .avis-avg {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 2.5rem;
-  }
-  .avis-score {
-    font-family: 'Cormorant Garamond', Georgia, serif;
-    font-size: 3.5rem;
-    font-weight: 700;
-    color: var(--black);
-    line-height: 1;
-  }
-  .avis-stars { color: var(--gold); font-size: 1.3rem; line-height: 1; }
-  .avis-count { font-size: .85rem; color: var(--muted); margin-top: .2rem; }
-  .avis-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 1.2rem;
-  }
-  .avis-card {
-    background: var(--white);
-    border-radius: 8px;
-    padding: 1.5rem;
-    box-shadow: 0 2px 10px rgba(0,0,0,.05);
-  }
-  .avis-card .stars { color: var(--gold); font-size: .9rem; margin-bottom: .5rem; }
-  .avis-card p { font-size: .9rem; color: var(--text); font-style: italic; margin-bottom: .8rem; }
-  .avis-card .name { font-size: .8rem; font-weight: 700; color: var(--muted); }
+/* FOOTER */
+footer {
+  background: #0D0D0D; color: rgba(255,255,255,.3);
+  padding: 2.5rem 6%;
+  display: flex; justify-content: space-between;
+  align-items: center; flex-wrap: wrap; gap: 1rem;
+  font-size: .82rem;
+}
+footer strong { color: var(--gold); }
+footer a { color: rgba(255,255,255,.3); text-decoration: none; }
 
-  /* ── BOOKING / CONTACT ── */
-  .booking-bg { background: var(--black); color: var(--white); }
-  .booking-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: start;
-  }
-  @media (max-width: 700px) { .booking-grid { grid-template-columns: 1fr; gap: 2rem; } }
-  .booking-bg .section-title { color: var(--gold-lt); }
-  .booking-bg .section-sub { color: rgba(255,255,255,.55); }
-  .contact-item { margin-bottom: 1.5rem; }
-  .contact-item .lbl { font-size: .75rem; text-transform: uppercase; letter-spacing: 1.5px; color: rgba(255,255,255,.4); margin-bottom: .3rem; }
-  .contact-item .val { color: rgba(255,255,255,.9); font-size: .95rem; }
-  .contact-item a { color: var(--gold); text-decoration: none; font-weight: 700; font-size: 1.2rem; }
-  .hours-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .3rem; }
-  .hours-row { display: flex; justify-content: space-between; font-size: .88rem; padding: .25rem 0; border-bottom: 1px solid rgba(255,255,255,.07); }
-  .hours-row .day { color: rgba(255,255,255,.5); }
-  .hours-row .time { color: rgba(255,255,255,.85); font-weight: 600; }
-  .hours-row .closed { color: rgba(255,255,255,.3); font-style: italic; }
-  .booking-form { display: flex; flex-direction: column; gap: 1rem; }
-  .booking-form input, .booking-form select, .booking-form textarea {
-    padding: .75rem 1rem;
-    border: 1.5px solid rgba(255,255,255,.15);
-    border-radius: 6px;
-    font-size: .95rem;
-    font-family: inherit;
-    background: rgba(255,255,255,.06);
-    color: var(--white);
-    transition: border-color .2s;
-  }
-  .booking-form input::placeholder { color: rgba(255,255,255,.35); }
-  .booking-form select option { background: #2a2a2a; }
-  .booking-form input:focus, .booking-form select:focus, .booking-form textarea:focus {
-    outline: none;
-    border-color: var(--gold);
-  }
-  .booking-form button {
-    background: var(--gold);
-    color: var(--black);
-    font-weight: 800;
-    font-size: 1rem;
-    padding: .9rem;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: opacity .2s;
-  }
-  .booking-form button:hover { opacity: .88; }
-
-  /* ── FOOTER ── */
-  footer {
-    background: #111;
-    color: rgba(255,255,255,.35);
-    text-align: center;
-    padding: 2rem 5%;
-    font-size: .82rem;
-  }
-  footer strong { color: var(--gold); }
-
-  @media (max-width: 600px) {
-    .hero-ctas { flex-direction: column; }
-    .btn-gold, .btn-outline { text-align: center; justify-content: center; }
-  }
+@media(max-width:600px){
+  .hero-ctas{ flex-direction:column; }
+  .btn-gold,.btn-ghost{ text-align:center; justify-content:center; }
+}
 </style>
 </head>
 <body>
 
 <nav>
-  <div class="nav-brand">Salon <span>81</span></div>
+  <div class="nav-logo">Salon <strong>81</strong></div>
   <div class="nav-links">
     <a href="#prestations">Prestations</a>
     <a href="#salon">Le salon</a>
     <a href="#avis">Avis</a>
-    <a class="cta" href="#booking">Réserver</a>
+    <a href="#booking" class="nav-resa">Réserver</a>
   </div>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-inner">
-    <div class="hero-tag">Coiffeur · Coloriste · Argenteuil</div>
-    <h1>Votre coloriste à <strong>Argenteuil</strong>, du résultat au premier coup de pinceau</h1>
-    <p>Salon de coiffure féminin au cœur d'Argenteuil. Colorations, coupes, soins — dans une ambiance attentionnée et sobre.</p>
+    <div class="hero-line">
+      <div class="hero-dash"></div>
+      <div class="hero-tag">Coiffeur · Coloriste · Argenteuil</div>
+    </div>
+    <h1><strong>Salon 81</strong>La couleur<br>qui vous ressemble</h1>
+    <p class="hero-sub">Salon de coiffure féminin au cœur d'Argenteuil. Spécialiste de la coloration, des mèches et du balayage — pour un résultat naturel et lumineux.</p>
     <div class="hero-ctas">
-      <a class="btn-gold" href="#booking">✦ Réserver en ligne</a>
-      <a class="btn-outline" href="tel:0130255567">📞 01 30 25 55 67</a>
+      <a class="btn-gold" href="#booking">Prendre rendez-vous</a>
+      <a class="btn-ghost" href="tel:0130255567">01 30 25 55 67</a>
     </div>
+    <div class="scroll-hint"><div class="scroll-line"></div>Découvrir le salon</div>
   </div>
 </section>
 
-<!-- PRESTATIONS -->
-<section class="prestations-bg" id="prestations">
-  <div class="section-label">Ce qu'on fait</div>
-  <div class="section-title">Nos prestations</div>
-  <p class="section-sub">Coupe, couleur, soin — chaque visite est pensée pour révéler le meilleur de votre chevelure.</p>
+<section class="sec sec-white" id="prestations">
+  <div class="sec-tag"><div class="sec-dash"></div><div class="sec-label">Ce qu'on fait</div></div>
+  <div class="sec-title">Nos prestations</div>
+  <p class="sec-sub">Chaque visite est pensée pour révéler le meilleur de votre chevelure — coupe, couleur, soin, coiffage.</p>
   <div class="presta-grid">
-    <div class="presta-card">
-      <span class="presta-emoji">✂️</span>
-      <h3>Coupe femme</h3>
-      <p>Courte, mi-longue, longue — adaptée à votre visage et votre style.</p>
-      <span class="presta-from">à partir de 35 €</span>
-    </div>
-    <div class="presta-card">
-      <span class="presta-emoji">🎨</span>
-      <h3>Coloration</h3>
-      <p>Teinte pleine, racines, couleur végétale — un résultat lumineux et durable.</p>
-      <span class="presta-from">à partir de 55 €</span>
-    </div>
-    <div class="presta-card">
-      <span class="presta-emoji">🌟</span>
-      <h3>Mèches &amp; balayage</h3>
-      <p>Balayage californien, mèches fines, ombré hair — la spécialité maison.</p>
-      <span class="presta-from">à partir de 70 €</span>
-    </div>
-    <div class="presta-card">
-      <span class="presta-emoji">💇‍♀️</span>
-      <h3>Brushing &amp; coiffage</h3>
-      <p>Lissage, ondulation, coiffage événement (mariages, soirées).</p>
-      <span class="presta-from">à partir de 30 €</span>
-    </div>
-    <div class="presta-card">
-      <span class="presta-emoji">🌿</span>
-      <h3>Soins capillaires</h3>
-      <p>Masques, kératine, soins nutrition et réparation pour cheveux abîmés.</p>
-      <span class="presta-from">à partir de 25 €</span>
-    </div>
-    <div class="presta-card">
-      <span class="presta-emoji">✨</span>
-      <h3>Forfaits</h3>
-      <p>Coupe + couleur, coupe + brushing — formules combinées à tarif avantageux.</p>
-      <span class="presta-from">sur devis</span>
-    </div>
+    <div class="presta-item"><span class="presta-icon">✂️</span><h3>Coupe femme</h3><p>Courte, mi-longue, longue — taillée selon votre visage, votre style, votre mode de vie.</p><span class="presta-from">À partir de 38 €</span></div>
+    <div class="presta-item"><span class="presta-icon">🎨</span><h3>Coloration</h3><p>Teinte pleine, racines, couleur végétale. Un résultat lumineux qui dure.</p><span class="presta-from">À partir de 55 €</span></div>
+    <div class="presta-item"><span class="presta-icon">✨</span><h3>Mèches & balayage</h3><p>Balayage californien, mèches fines, ombré hair — la spécialité du salon.</p><span class="presta-from">À partir de 70 €</span></div>
+    <div class="presta-item"><span class="presta-icon">💇‍♀️</span><h3>Brushing</h3><p>Lissage, ondulation, coiffage soirée ou mariage.</p><span class="presta-from">À partir de 30 €</span></div>
+    <div class="presta-item"><span class="presta-icon">🌿</span><h3>Soins capillaires</h3><p>Masques nutrition, kératine, soins réparateurs pour cheveux abîmés.</p><span class="presta-from">À partir de 25 €</span></div>
+    <div class="presta-item"><span class="presta-icon">💼</span><h3>Forfaits</h3><p>Coupe + couleur, coupe + brushing — formules combinées avantageuses.</p><span class="presta-from">Sur devis</span></div>
   </div>
 </section>
 
-<!-- LE SALON -->
-<section class="salon-bg" id="salon">
-  <div class="salon-grid">
-    <div class="salon-text">
-      <div class="section-label">Le salon</div>
-      <div class="section-title">Un espace pour vous</div>
-      <p>Salon 81, c'est un salon de coiffure <strong>exclusivement féminin</strong> où l'on prend le temps. Pas d'accumulation de clientes, pas de précipitation — chaque prestation est réalisée avec soin, dans le respect de votre cheveu et de votre temps.</p>
-      <p>Situé <strong>12 Boulevard Jean Allemane</strong>, en plein cœur d'Argenteuil, à deux pas des transports.</p>
-      <p><strong>Spécialité coloriste</strong> : notre point fort, c'est la couleur. Balayages, méchages, couleurs personnalisées — on maîtrise les techniques actuelles pour un résultat naturel et lumineux.</p>
-    </div>
-    <div class="salon-photos">
-      <div class="photo-block">🪞</div>
-      <div class="photo-block">💡</div>
-      <div class="photo-block">🌸</div>
+<div class="editorial" id="salon">
+  <div class="editorial-img">
+    <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800&q=85&auto=format&fit=crop" alt="Coiffeuse au travail">
+  </div>
+  <div class="editorial-text">
+    <div class="sec-tag"><div class="sec-dash"></div><div class="sec-label">Le salon</div></div>
+    <div class="sec-title" style="color:white">Un salon pour vous,<br>rien que pour vous</div>
+    <p>Salon 81, c'est un <strong>salon exclusivement féminin</strong> situé 12 Boulevard Jean Allemane, à Argenteuil. On y prend le temps — pas de bruit de fond, pas de précipitation.</p>
+    <p>Notre point fort : la <strong>colorimétrie</strong>. Balayage, méchage, coloration personnalisée — on maîtrise les techniques actuelles pour un résultat toujours naturel et sur-mesure.</p>
+    <div class="editorial-atouts">
+      <div class="atout"><div class="atout-bar"></div>Salon féminin · ambiance calme et attentionnée</div>
+      <div class="atout"><div class="atout-bar"></div>Spécialiste coloration & balayage depuis plusieurs années</div>
+      <div class="atout"><div class="atout-bar"></div>Boulevard Jean Allemane · accès facile, transports à proximité</div>
     </div>
   </div>
-</section>
+</div>
 
-<!-- GALERIE -->
-<section class="galerie-bg">
-  <div class="section-label">Réalisations</div>
-  <div class="section-title">Avant / Après</div>
-  <p class="section-sub">Quelques créations récentes — colorations, coupes et soins réalisés au salon.</p>
+<section class="sec sec-linen">
+  <div class="sec-tag"><div class="sec-dash"></div><div class="sec-label">Réalisations</div></div>
+  <div class="sec-title">Avant / Après</div>
+  <p class="sec-sub">Quelques créations récentes — colorations, coupes et soins réalisés au Salon 81.</p>
   <div class="galerie-grid">
-    <div class="galerie-item">🎨<div class="label">Balayage californien</div></div>
-    <div class="galerie-item">✂️<div class="label">Coupe carré long</div></div>
-    <div class="galerie-item">🌟<div class="label">Couleur cuivrée</div></div>
-    <div class="galerie-item">💇‍♀️<div class="label">Lissage + brillance</div></div>
-    <div class="galerie-item">🌿<div class="label">Soin kératine</div></div>
-    <div class="galerie-item">🎀<div class="label">Coiffage mariage</div></div>
+    <div class="gal-item"><img src="https://images.unsplash.com/photo-1492106087820-fe151450f3db?w=400&q=80&auto=format&fit=crop" alt="Coloration"></div>
+    <div class="gal-item"><img src="https://images.unsplash.com/photo-1519735777090-ec97162dc266?w=400&q=80&auto=format&fit=crop" alt="Balayage"></div>
+    <div class="gal-item"><img src="https://images.unsplash.com/photo-1530521954074-e64f6810b32d?w=400&q=80&auto=format&fit=crop" alt="Coupe"></div>
+    <div class="gal-item"><img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?w=400&q=80&auto=format&fit=crop" alt="Coiffure"></div>
   </div>
 </section>
 
-<!-- AVIS -->
-<section class="avis-bg" id="avis">
-  <div class="section-label">Avis clientes</div>
-  <div class="section-title">Ce qu'elles en pensent</div>
-  <div class="avis-avg">
+<section class="sec sec-dark" id="avis">
+  <div class="sec-tag"><div class="sec-dash"></div><div class="sec-label">Témoignages</div></div>
+  <div class="avis-header">
     <div class="avis-score">4,9</div>
-    <div>
-      <div class="avis-stars">★★★★★</div>
-      <div class="avis-count">Basé sur les avis Google</div>
+    <div class="avis-meta">
+      <div class="avis-stars">★ ★ ★ ★ ★</div>
+      <div class="avis-count">Note moyenne — avis Google</div>
     </div>
   </div>
   <div class="avis-grid">
-    <div class="avis-card">
-      <div class="stars">★★★★★</div>
-      <p>"Coloriste de talent. Mon balayage est exactement ce que je voulais — naturel, lumineux. Je reviendrai sans hésiter."</p>
-      <div class="name">— Samira L., Argenteuil</div>
-    </div>
-    <div class="avis-card">
-      <div class="stars">★★★★★</div>
-      <p>"Salon calme, propre, et une coiffeuse qui prend vraiment le temps d'écouter. Résultat impeccable."</p>
-      <div class="name">— Céline D., Sartrouville</div>
-    </div>
-    <div class="avis-card">
-      <div class="stars">★★★★★</div>
-      <p>"Mes mèches sont parfaites ! Elle a su s'adapter à la couleur de base et proposer quelque chose de subtil et moderne."</p>
-      <div class="name">— Fatou K., Argenteuil</div>
-    </div>
+    <div class="avis-card"><div class="avis-stars-sm">★★★★★</div><p>"Mon balayage est exactement ce que je voulais — naturel, lumineux, sans effet "patché". Je reviendrai sans hésiter."</p><div class="avis-name">— Samira L., Argenteuil</div></div>
+    <div class="avis-card"><div class="avis-stars-sm">★★★★★</div><p>"Salon calme, propre et une coiffeuse qui prend vraiment le temps d'écouter. Résultat parfait, je suis repartie ravie."</p><div class="avis-name">— Céline D., Sartrouville</div></div>
+    <div class="avis-card"><div class="avis-stars-sm">★★★★★</div><p>"Mes mèches sont parfaites. Elle a su s'adapter à ma couleur de base et proposer quelque chose de subtil et actuel."</p><div class="avis-name">— Fatou K., Argenteuil</div></div>
   </div>
 </section>
 
-<!-- RÉSERVATION -->
-<section class="booking-bg" id="booking">
+<section class="sec sec-white" id="booking">
   <div class="booking-grid">
-    <div>
-      <div class="section-label">Nous trouver</div>
-      <div class="section-title">Infos pratiques</div>
-      <div class="contact-item">
-        <div class="lbl">Adresse</div>
-        <div class="val">12 Boulevard Jean Allemane, 95100 Argenteuil</div>
-      </div>
-      <div class="contact-item">
-        <div class="lbl">Téléphone</div>
-        <a href="tel:0130255567">01 30 25 55 67</a>
-      </div>
-      <div class="contact-item">
-        <div class="lbl">Horaires</div>
-        <div class="hours-grid">
-          <div class="hours-row"><span class="day">Lundi</span><span class="closed">Fermé</span></div>
-          <div class="hours-row"><span class="day">Mardi</span><span class="time">9h30 – 18h00</span></div>
-          <div class="hours-row"><span class="day">Mercredi</span><span class="time">9h30 – 18h00</span></div>
-          <div class="hours-row"><span class="day">Jeudi</span><span class="time">9h30 – 18h00</span></div>
-          <div class="hours-row"><span class="day">Vendredi</span><span class="time">9h30 – 18h00</span></div>
-          <div class="hours-row"><span class="day">Samedi</span><span class="time">9h30 – 19h00</span></div>
-          <div class="hours-row"><span class="day">Dimanche</span><span class="closed">Fermé</span></div>
-        </div>
-      </div>
+    <div class="infos">
+      <div class="sec-tag"><div class="sec-dash"></div><div class="sec-label">Infos pratiques</div></div>
+      <div class="sec-title">Nous trouver</div>
+      <div class="info-line"><div class="info-ico">📍</div><div><div class="info-lbl">Adresse</div><div class="info-val">12 Boulevard Jean Allemane<br>95100 Argenteuil</div></div></div>
+      <div class="info-line"><div class="info-ico">📞</div><div><div class="info-lbl">Téléphone</div><div class="info-val"><a href="tel:0130255567">01 30 25 55 67</a></div></div></div>
+      <div class="info-line"><div class="info-ico">🕐</div><div><div class="info-lbl">Horaires</div><div class="info-val"><div class="hours">
+        <div class="h-row"><span class="day">Lundi</span><span class="closed">Fermé</span></div>
+        <div class="h-row"><span class="day">Mardi – Vendredi</span><span class="time">9h30 – 18h00</span></div>
+        <div class="h-row"><span class="day">Samedi</span><span class="time">9h30 – 19h00</span></div>
+        <div class="h-row"><span class="day">Dimanche</span><span class="closed">Fermé</span></div>
+      </div></div></div></div>
     </div>
     <div>
-      <div class="section-label">Prendre RDV</div>
-      <div class="section-title">Réserver</div>
-      <p class="section-sub">Remplissez le formulaire et on vous rappelle dans la journée pour confirmer votre créneau.</p>
-      <form class="booking-form">
-        <input type="text" placeholder="Votre prénom *" required>
-        <input type="tel" placeholder="Votre téléphone *" required>
-        <select>
-          <option value="">Prestation souhaitée</option>
-          <option>Coupe femme</option>
-          <option>Coloration</option>
-          <option>Mèches / Balayage</option>
-          <option>Brushing</option>
-          <option>Soin capillaire</option>
-          <option>Forfait combiné</option>
-        </select>
-        <input type="date" title="Date souhaitée">
-        <form>
-        <button type="submit">✦ Demander mon RDV</button>
-      </form>
+      <div class="form-card">
+        <h3>Réserver votre créneau</h3>
+        <div class="field"><label>Prénom</label><input type="text" placeholder="Marie"></div>
+        <div class="field"><label>Téléphone</label><input type="tel" placeholder="06 00 00 00 00"></div>
+        <div class="field"><label>Prestation</label>
+          <select>
+            <option value="">Choisissez...</option>
+            <option>Coupe femme</option>
+            <option>Coloration</option>
+            <option>Mèches / Balayage</option>
+            <option>Brushing</option>
+            <option>Soin capillaire</option>
+            <option>Forfait combiné</option>
+          </select>
+        </div>
+        <div class="field"><label>Date souhaitée</label><input type="date"></div>
+        <button class="resa-btn">Envoyer ma demande →</button>
+      </div>
     </div>
   </div>
 </section>
 
 <footer>
-  <strong>Salon 81</strong> — Coiffeur &amp; Coloriste · 12 Bd Jean Allemane, 95100 Argenteuil · <a href="tel:0130255567" style="color:rgba(255,255,255,.4)">01 30 25 55 67</a>
+  <div><strong>Salon 81</strong> — Coiffeur & Coloriste · 12 Bd Jean Allemane, 95100 Argenteuil</div>
+  <div><a href="tel:0130255567">01 30 25 55 67</a></div>
 </footer>
-
 </body>
 </html>
